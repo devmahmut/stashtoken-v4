@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>StashToken - Decentralized Staking Protocol</title>
+    <meta name="description" content="StashToken - Next-generation staking platform for maximum yield optimization"/>
+    
+    <!-- Fontlar -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+    
+    <!-- CSS Dosyaları -->
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="assets/css/styles.css"/>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico" sizes="any"/>
+    
+    <!-- Meta Etiketleri -->
+    <meta name="theme-color" content="#000000"/>
+    <meta name="color-scheme" content="dark"/>
+    
+    <!-- Dark/Light Mode Script -->
+    <script>
+        ((a,b,c,d,e,f,g,h)=>{
+            let i=document.documentElement,j=["light","dark"];
+            function k(b){
+                var c;(Array.isArray(a)?a:[a]).forEach(a=>{
+                    let c="class"===a,d=c&&f?e.map(a=>f[a]||a):e;
+                    c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)
+                }),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)
+            }
+            if(d)k(d);else try{
+                let a=localStorage.getItem(b)||c,d=g&&"system"===a?window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light":a;
+                k(d)
+            }catch(a){}
+        })("class","theme","dark","dark",["light","dark"],null,false,true)
+    </script>
+    
+    <!-- Progress Bar Styles -->
+    <style>
+        #nprogress{pointer-events:none}
+        #nprogress .bar{background:#9AE064;position:fixed;z-index:1600;top: 0;left:0;width:100%;height:3px}
+        #nprogress .peg{display:block;position:absolute;right:0;width:100px;height:100%;box-shadow:0 0 10px #9AE064,0 0 5px #9AE064;opacity:1;-webkit-transform:rotate(3deg) translate(0px,-4px);-ms-transform:rotate(3deg) translate(0px,-4px);transform:rotate(3deg) translate(0px,-4px)}
+        #nprogress .spinner{display:block;position:fixed;z-index:1600;top: 15px;right:15px}
+        #nprogress .spinner-icon{width:18px;height:18px;box-sizing:border-box;border:2px solid transparent;border-top-color:#9AE064;border-left-color:#9AE064;border-radius:50%;-webkit-animation:nprogress-spinner 400ms linear infinite;animation:nprogress-spinner 400ms linear infinite}
+        .nprogress-custom-parent{overflow:hidden;position:relative}
+        .nprogress-custom-parent #nprogress .bar,.nprogress-custom-parent #nprogress .spinner{position:absolute}
+        @-webkit-keyframes nprogress-spinner{0%{-webkit-transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg)}}
+        @keyframes nprogress-spinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+    </style>
+</head>
+<body>
+    <div class="relative min-h-screen bg-white font-mona text-[#012212]">
+        <!-- Hero Background -->
+        <img alt="stashtoken tree background" loading="lazy" width="1440" height="1507" 
+             class="absolute left-0 top-0 z-0 h-auto max-h-[1507px] w-full" 
+             style="color:transparent" src="assets/images/hero-background.svg"/>
+        
+        <!-- Navigation -->
+        <nav class="fixed left-0 right-0 top-0 z-50 transition-transform duration-300 translate-y-0">
+            <div class="flex w-full flex-col items-center justify-center px-4 md:px-8">
+                <div class="flex h-[86px] w-full max-w-[1376px] items-center justify-between gap-x-4 bg-transparent md:h-[128px]">
+                    <div class="flex h-[50px] w-auto items-center justify-between rounded-lg bg-[#E2E2E2] px-4 md:h-[64px]">
+                        <img alt="stashtoken logo" loading="lazy" width="133" height="30" 
+                             style="color:transparent; width: auto; height: 200px;" 
+                             src="assets/images/logo.svg"/>
+                    </div>
+                    <div class="flex items-center justify-center gap-x-6 rounded-lg bg-[#E2E2E2] px-0 md:h-[64px] md:w-fit md:px-4">
+                            <button class="p-2">
+                                Go to StashOffer
+                            </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="relative w-full pt-[calc(108px_+_54px)] md:pt-[calc(108px_+_92px)]">
+            <div class="relative flex h-full flex-col items-center justify-center">
+                <div class="mb-6 flex h-8 w-[412px] items-center rounded-lg bg-arcGreen px-3 text-[14px]">
+                                         <div class="animate-pulse rounded-md h-4 w-full bg-white/20 justify-center items-center flex">
+                         <span>🚀 StashToken Mainnet is Live!
+                             Start earning rewards</span>
+                     </div>
+                </div>
+                <span>Stake. Earn. Compound.</span>
+                <div class="flex flex-col items-center px-4 pt-6 text-center">
+                    <div class="flex flex-col text-[42px] font-medium leading-none md:text-[80px]">
+                        <span>Your crypto,</span>
+                        <span>maximized.</span>
+                    </div>
+                    <span class="mt-4 w-full text-[16px] md:w-[65%] md:text-[18px]">
+                        Advanced staking protocol. Automated yield optimization. Where your assets work harder with intelligent DeFi strategies.
+                    </span>
+                    <div class="mt-8 flex items-center gap-x-3">
+                        <div class="flex h-10 items-center justify-center rounded-lg border border-[#012212] bg-[#012212] px-4 text-[18px] text-white transition-colors duration-500 hover:bg-transparent hover:text-[#012212] cursor-pointer">
+                            Start Staking
+                        </div>
+                        <div class="flex h-10 cursor-pointer items-center justify-center gap-x-2 rounded-lg border border-transparent px-4 text-[18px] text-[#012212] transition-all duration-500 hover:border-[#012212]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256">
+                                <path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path>
+                            </svg>
+                            Watch Demo
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="flex w-full justify-center pt-[56px]">
+            <div class="flex w-full items-center justify-center px-4 md:px-8">
+                <div class="w-full max-w-[1372px] overflow-hidden rounded-xl">
+                    <div class="relative aspect-[2040/1080]">
+                        <video src="assets/images/demo-video.webm" autoplay loop muted playsinline 
+                               class="absolute left-0 top-0 h-full w-full object-cover"></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="flex w-full items-center justify-center px-4 md:px-8">
+            <div class="relative z-10 flex w-full max-w-[1372px] flex-col bg-white py-[124px]">
+                <div class="mb-[64px] flex w-full flex-col gap-y-4 md:mb-[190px]">
+                    <span class="text-[16px]">About StashToken</span>
+                    <div class="flex w-full flex-col justify-between gap-x-4 gap-y-4 md:flex-row">
+                        <span class="flex text-[32px]">How StashToken Works</span>
+                        <span class="w-full text-[18px] md:w-[506px]">
+                            Create powerful DeFi strategies that maximize yield opportunities in minutes, not days.
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="flex w-full flex-col items-start justify-between gap-x-12 gap-y-8 xl:flex-row">
+                    <div class="w-full xl:flex-1">
+                        <img alt="How to use StashToken" loading="lazy" width="1024" height="654" 
+                             class="h-auto w-full" style="color:transparent" 
+                             src="assets/images/product-demo.webp"/>
+                    </div>
+                    <div class="flex w-full flex-col gap-8 xl:w-[300px]">
+                        <div class="flex w-full flex-col">
+                            <div class="order-1 mb-8 mt-2 flex flex-col gap-y-1 md:order-2 md:mb-0">
+                                <div class="mb-4 flex h-[1px] w-8 bg-[#161616]"></div>
+                                <span class="text-[24px]">Connect Your Wallet</span>
+                                <span class="text-[16px] text-[#7C7C7E]">
+                                    Link your existing wallet or create a new one. Every asset becomes part of your yield optimization strategy. Stake, delegate, earn automatically.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex w-full flex-col">
+                            <div class="order-1 mb-8 mt-8 flex flex-col gap-y-1 md:order-2 md:mb-0">
+                                <div class="mb-4 flex h-[1px] w-8 bg-[#161616]"></div>
+                                <span class="text-[24px]">Choose Your Strategy</span>
+                                <span class="text-[16px] text-[#7C7C7E]">
+                                    Select from automated strategies across multiple protocols. Each position preserves capital while building a diversified portfolio that mirrors your risk tolerance.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex w-full flex-col">
+                            <div class="order-1 mb-8 mt-8 flex flex-col gap-y-1 md:order-2 md:mb-0">
+                                <div class="mb-4 flex h-[1px] w-8 bg-[#161616]"></div>
+                                <span class="text-[24px]">Maximize with DeFi</span>
+                                <span class="text-[16px] text-[#7C7C7E]">
+                                    Every position is yield-optimized. Generate compounding rewards, harvest automatically, or compound connected strategies. DeFi understands your full portfolio context.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="flex w-full items-center justify-center px-4 md:px-8">
+            <div class="flex w-full max-w-[1376px] flex-col bg-white py-8 md:py-[124px]">
+                <div class="mb-[64px] flex w-full flex-col gap-y-4 md:mb-[190px]">
+                    <span class="text-[16px]">Tokenomics</span>
+                    <div class="flex w-full flex-col justify-between gap-y-4 md:flex-row">
+                        <span class="flex text-[32px]">Where yields become reality.</span>
+                        <span class="w-full text-[18px] md:w-[506px]">
+                            This isn't just staking. It's a new way of earning. Where DeFi protocols don't just hold—they collaborate, optimize, and surprise you with yields you hadn't imagined.
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="flex w-full flex-col gap-x-8 gap-y-[64px] md:flex-row">
+                    <div class="order-2 flex w-full flex-col md:order-1 md:w-1/3">
+                        <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[300px] md:border-l md:border-t-0 md:px-8">
+                            <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M216,42H72A14,14,0,0,0,58,56V74H40A14,14,0,0,0,26,88V200a14,14,0,0,0,14,14H184a14,14,0,0,0,14-14V182h18a14,14,0,0,0,14-14V56A14,14,0,0,0,216,42ZM40,86H184a2,2,0,0,1,2,2v18H38V88A2,2,0,0,1,40,86ZM186,200a2,2,0,0,1-2,2H40a2,2,0,0,1-2-2V118H186Zm32-32a2,2,0,0,1-2,2H198V88a14,14,0,0,0-14-14H70V56a2,2,0,0,1,2-2H216a2,2,0,0,1,2,2Z"></path>
+                                </svg>
+                                <div class="font-regular flex flex-col">
+                                    <span class="text-[24px]">Multi-Chain Staking</span>
+                                    <span class="text-[16px] text-[#16161A]">
+                                        Stake across multiple blockchains with full protocol support. Format positions, add liquidity, organize your portfolio exactly how you think about yields.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-3 flex w-full flex-col md:order-2 md:w-1/3">
+                        <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[300px] md:border-l md:border-t-0 md:px-8">
+                            <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M148.24,139.76a6,6,0,0,0-8.48,0L120,159.51,96.49,136l19.75-19.76a6,6,0,0,0-8.48-8.48L88,127.51,68.24,107.76a6,6,0,0,0-8.48,8.48L67.51,124,42.79,148.73a30,30,0,0,0,0,42.42l6.78,6.79L19.76,227.76a6,6,0,1,0,8.48,8.48l29.82-29.81,6.79,6.78a30,30,0,0,0,42.42,0L132,188.49l7.76,7.75a6,6,0,0,0,8.48-8.48L128.49,168l19.75-19.76A6,6,0,0,0,148.24,139.76Zm-49.45,65a18,18,0,0,1-25.46,0L51.27,182.67a18,18,0,0,1,0-25.46L76,132.49,123.51,180Zm137.45-185a6,6,0,0,0-8.48,0L197.94,49.57l-6.79-6.78a30,30,0,0,0-42.42,0L124,67.51l-7.76-7.75a6,6,0,0,0-8.48,8.48l80,80a6,6,0,0,0,8.48-8.48L188.49,132l24.72-24.73a30,30,0,0,0,0-42.42l-6.78-6.79,29.81-29.82A6,6,0,0,0,236.24,19.76Zm-31.51,79L180,123.51,132.49,76l24.72-24.73a18,18,0,0,1,25.46,0l22.06,22.06a18,18,0,0,1,0,25.46Z"></path>
+                                </svg>
+                                <div class="font-regular flex flex-col">
+                                    <span class="text-[24px]">Smart Yield Farming</span>
+                                    <span class="text-[16px] text-[#16161A]">
+                                        Connect pools to build yield chains. DeFi understands your full portfolio strategy, not just isolated positions.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-1 flex w-full flex-col md:order-3 md:w-1/3">
+                        <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[300px] md:border-l md:border-t-0 md:px-8">
+                            <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M172.91,83.09a78,78,0,1,0-89.82,89.82,78,78,0,1,0,89.82-89.82ZM30,96A66,66,0,0,1,160.49,82H160a78.09,78.09,0,0,0-78,78c0,.17,0,.33,0,.49A66.1,66.1,0,0,1,30,96Zm64,64a65.62,65.62,0,0,1,6-27.49L123.49,156A65.62,65.62,0,0,1,96,162c-.65,0-1.3,0-2-.05C94,161.3,94,160.65,94,160Zm40.23-10.25-28-28a66.47,66.47,0,0,1,15.52-15.52l28,28A66.47,66.47,0,0,1,134.23,149.75ZM162,96a65.62,65.62,0,0,1-6,27.49L132.51,100A65.62,65.62,0,0,1,160,94c.65,0,1.3,0,1.95,0C162,94.7,162,95.35,162,96Zm-2,130a66.1,66.1,0,0,1-64.49-52H96a78.09,78.09,0,0,0,78-78c0-.17,0-.33,0-.49A66,66,0,0,1,160,226Z"></path>
+                                </svg>
+                                <div class="font-regular flex flex-col">
+                                    <span class="text-[24px]">Real-time Analytics</span>
+                                    <span class="text-[16px] text-[#16161A]">
+                                        Watch your portfolio evolve into living yield dashboards. See connections, identify patterns, discover opportunities.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="flex w-full items-center justify-center px-4 py-8 md:px-8 md:py-[56px]">
+            <div class="flex w-full max-w-[1376px] flex-col items-center justify-center rounded-lg bg-arcGreen bg-[url('assets/images/cta-background.webp')] bg-cover bg-center p-8">
+                <span class="mb-4 text-[#16161A]">Your second wallet, now with intelligence.</span>
+                <div class="mb-6 flex flex-col text-center text-[56px] font-medium leading-none text-[#16161A] md:mb-[60px]">
+                    <div class="hidden flex-col md:flex">
+                        <span>Stake. Compound.</span>
+                        <span>Earn. Think DeFi.</span>
+                    </div>
+                    <div class="flex flex-col text-[38px] md:hidden">
+                        <span>Stake.</span>
+                        <span>Compound.</span>
+                        <span>Earn.</span>
+                        <span>Think DeFi.</span>
+                    </div>
+                </div>
+                <div class="flex h-[44px] cursor-pointer items-center justify-center rounded-lg border border-[#16161A] bg-[#16161A] px-4 text-white transition-colors duration-500 hover:bg-transparent hover:text-[#16161A]">
+                    Go StashOffer
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Logo -->
+        <div class="flex w-full items-center justify-center px-4 md:px-8">
+            <img alt="footer graphic" loading="lazy" width="1440" height="200" 
+                 class="mb-8 h-auto w-full max-w-[1376px] md:mb-[108px]" 
+                 style="color:transparent;object-fit:contain" src="assets/images/footer-graphic.svg"/>
+        </div>
+
+        <!-- Footer -->
+        <div class="flex w-full items-center justify-center px-8">
+            <div class="flex w-full max-w-[1372px] items-center justify-between bg-white pb-[56px]">
+                <div class="flex w-full justify-between">
+                    <div class="w-full md:w-auto">
+                        <img alt="stashtoken logo" loading="lazy" width="133" height="30" 
+                             style="color:transparent; width: auto; height: 200px;" 
+                             src="assets/images/logo.svg"/>
+                    </div>
+                    <div class="flex items-center justify-center gap-x-2">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="scale-[1.75] cursor-pointer rounded px-2 hover:bg-[#303037]/50">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect width="4" height="12" x="2" y="9"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </div>
+                        <div>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="scale-[1.75] cursor-pointer rounded px-2 hover:bg-[#303037]/50">
+                                <path d="M20.3303 4.22781C18.7767 3.50093 17.1156 2.97267 15.3789 2.67188C15.1656 3.05749 14.9164 3.57614 14.7446 3.98873C12.8985 3.71109 11.0693 3.71109 9.25716 3.98873C9.08539 3.57614 8.83055 3.05749 8.61536 2.67188C6.87681 2.97267 5.21376 3.50287 3.66019 4.23166C0.526643 8.96686 -0.322811 13.5845 0.101917 18.1365C2.18025 19.6885 4.19441 20.6313 6.17457 21.2483C6.66349 20.5754 7.09953 19.8601 7.47518 19.1063C6.75975 18.8344 6.07453 18.499 5.42707 18.1095C5.59884 17.9822 5.76686 17.8492 5.92918 17.7123C9.87819 19.5594 14.1689 19.5594 18.0707 17.7123C18.235 17.8492 18.403 17.9822 18.5728 18.1095C17.9235 18.5009 17.2364 18.8363 16.521 19.1082C16.8966 19.8601 17.3308 20.5774 17.8216 21.2502C19.8036 20.6333 21.8197 19.6905 23.898 18.1365C24.3964 12.8595 23.0467 8.28434 20.3303 4.22781ZM8.01318 15.337C6.82772 15.337 5.85555 14.2303 5.85555 12.8826C5.85555 11.535 6.80696 10.4264 8.01318 10.4264C9.21942 10.4264 10.1916 11.533 10.1708 12.8826C10.1727 14.2303 9.21942 15.337 8.01318 15.337ZM15.9867 15.337C14.8013 15.337 13.8291 14.2303 13.8291 12.8826C13.8291 11.535 14.7805 10.4264 15.9867 10.4264C17.193 10.4264 18.1651 11.533 18.1444 12.8826C18.1444 14.2303 17.193 15.337 15.9867 15.337Z" fill="currentColor"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="scale-[1.75] cursor-pointer rounded px-2 hover:bg-[#303037]/50">
+                                <path d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z" fill="currentColor"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <svg class="h-6 w-6 scale-[1.75] cursor-pointer rounded px-2 hover:bg-[#303037]/50" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

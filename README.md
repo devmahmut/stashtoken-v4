@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StashToken - Tasarım Klonu
 
-## Getting Started
+Bu proje, [Ryzome AI](https://ryzome.ai/) sitesinin tasarımından esinlenerek oluşturulmuş StashToken sitesidir.
 
-First, run the development server:
+## 📁 Dosya Yapısı
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+stashtoken_v4/
+├── 📄 index.html              # Ana sayfa
+├── 📄 README.md               # Bu dosya
+└── 📁 assets/                 # Varlıklar
+    ├── 📁 css/                # Stil dosyaları
+    │   ├── main.css           # Ana CSS dosyası
+    │   └── styles.css         # Ek stiller
+    ├── 📁 fonts/              # Font dosyaları
+    │   ├── MonaSans-Bold.woff2
+    │   ├── MonaSans-Light.woff2
+    │   ├── MonaSans-Medium.woff2
+    │   ├── MonaSans-Regular.woff2
+    │   └── MonaSans-SemiBold.woff2
+    └── 📁 images/             # Görseller
+        ├── cta-background.webp      # CTA arkaplan görseli
+        ├── demo-video.webm          # Demo videosu
+        ├── favicon.ico              # Site ikonu
+        ├── footer-graphic.svg       # Footer grafiği
+        ├── hero-background.svg      # Ana sayfa arkaplan
+        ├── logo.svg                 # StashToken logosu
+        └── product-demo.webp        # Ürün demo görseli
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Özellikler
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- ✅ **Tamamen Statik**: Sadece HTML, CSS ve görseller
+- ✅ **Mobil Uyumlu**: Responsive tasarım
+- ✅ **Hızlı Yükleme**: Optimize edilmiş dosyalar
+- ✅ **Temiz Kod**: Anlaşılır dosya yapısı
+- ✅ **Türkçe İçerik**: Metinler Türkçe'ye çevrilmiş
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Kullanım
 
-## Learn More
+1. **Dosyaları İndirin**
+2. **Tarayıcıda Açın**: `index.html` dosyasını çift tıklayın
+3. **Web Sunucusunda Çalıştırın** (opsiyonel):
+   ```bash
+   # Python ile basit sunucu
+   python -m http.server 8000
+   
+   # Node.js ile
+   npx serve .
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+## 🔧 Özelleştirme
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Renkler
+- Ana renk: `#012212` (koyu yeşil)
+- Accent renk: `#9AE064` (açık yeşil)
+- Gri tonları CSS dosyalarında tanımlı
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Fontlar
+- MonaSans font ailesi kullanılıyor
+- Farklı ağırlıklar: Light, Regular, Medium, SemiBold, Bold
 
-## Deploy on Vercel
+### Görseller
+- SVG formatında vektör grafikler
+- WebP formatında optimize edilmiş resimler
+- WebM formatında video
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📱 Bölümler
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Hero Section** - Ana başlık ve CTA butonları
+2. **Video Section** - Demo videosu
+3. **About Section** - StashToken nasıl çalışır
+4. **Features Section** - 3 ana özellik
+5. **CTA Section** - Call-to-action bölümü
+6. **Footer** - Logo ve sosyal medya linkleri
+
+## 🛠️ Geliştirici Notları
+
+- Orijinal Next.js JavaScript kodları kaldırıldı
+- Sadece gerekli CSS dosyaları korundu
+- Dosya isimleri anlaşılır hale getirildi
+- Gereksiz auth sayfaları silindi
+- KaTeX fontları kaldırıldı (kullanılmıyordu)
+
+## 📄 Lisans
+
+Bu proje StashToken için tasarım çalışması amaçlıdır. Orijinal tasarım [Ryzome AI](https://ryzome.ai/)'dan esinlenilmiştir.
