@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="assets/css/main.css"/>
     <link rel="stylesheet" href="assets/css/styles.css"/>
     
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <!-- Favicon -->
     <link rel="icon" href="assets/images/favicon.ico" sizes="any"/>
     
@@ -49,6 +52,33 @@
         .nprogress-custom-parent #nprogress .bar,.nprogress-custom-parent #nprogress .spinner{position:absolute}
         @-webkit-keyframes nprogress-spinner{0%{-webkit-transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg)}}
         @keyframes nprogress-spinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+        
+        /* FAQ Styles */
+        .faq-content {
+            max-height: 0 !important;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .faq-content.open {
+            max-height: 500px !important;
+        }
+        
+        .faq-item {
+            transition: background-color 0.3s ease;
+        }
+        
+        .faq-item.open {
+            background-color: #E8E8E8 !important;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
     </style>
 </head>
 <body>
@@ -173,63 +203,295 @@
             </div>
         </div>
 
-        <!-- Features Section -->
+        <!-- Tokenomics Section -->
         <div class="flex w-full items-center justify-center px-4 md:px-8">
             <div class="flex w-full max-w-[1376px] flex-col bg-white py-8 md:py-[124px]">
                 <div class="mb-[64px] flex w-full flex-col gap-y-4 md:mb-[190px]">
                     <span class="text-[16px]">Tokenomics</span>
                     <div class="flex w-full flex-col justify-between gap-y-4 md:flex-row">
-                        <span class="flex text-[32px]">Where yields become reality.</span>
+                        <span class="flex text-[32px]">Token Distribution</span>
                         <span class="w-full text-[18px] md:w-[506px]">
-                            This isn't just staking. It's a new way of earning. Where DeFi protocols don't just hold—they collaborate, optimize, and surprise you with yields you hadn't imagined.
+                            Transparent token allocation with locked liquidity and strategic distribution.
                         </span>
                     </div>
                 </div>
                 
-                <div class="flex w-full flex-col gap-x-8 gap-y-[64px] md:flex-row">
-                    <div class="order-2 flex w-full flex-col md:order-1 md:w-1/3">
-                        <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[300px] md:border-l md:border-t-0 md:px-8">
-                            <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
-                                    <path d="M216,42H72A14,14,0,0,0,58,56V74H40A14,14,0,0,0,26,88V200a14,14,0,0,0,14,14H184a14,14,0,0,0,14-14V182h18a14,14,0,0,0,14-14V56A14,14,0,0,0,216,42ZM40,86H184a2,2,0,0,1,2,2v18H38V88A2,2,0,0,1,40,86ZM186,200a2,2,0,0,1-2,2H40a2,2,0,0,1-2-2V118H186Zm32-32a2,2,0,0,1-2,2H198V88a14,14,0,0,0-14-14H70V56a2,2,0,0,1,2-2H216a2,2,0,0,1,2,2Z"></path>
-                                </svg>
-                                <div class="font-regular flex flex-col">
-                                    <span class="text-[24px]">Multi-Chain Staking</span>
-                                    <span class="text-[16px] text-[#16161A]">
-                                        Stake across multiple blockchains with full protocol support. Format positions, add liquidity, organize your portfolio exactly how you think about yields.
-                                    </span>
+                                <div class="flex w-full flex-col gap-x-8 gap-y-[64px] md:flex-row">
+                    <div class="order-2 flex w-full flex-col md:order-1 md:w-1/2">
+                        <div class="grid grid-cols-2 gap-8">
+                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8">
+                                <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+                                        <path d="M128,56A72,72,0,0,0,56,128c0,39.7,32.3,72,72,72s72-32.3,72-72S167.7,56,128,56Zm0,128a56,56,0,1,1,56-56A56.06,56.06,0,0,1,128,128Zm0-96a40,40,0,1,0,40,40A40,40,0,0,0,128,32Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,96Z"></path>
+                                    </svg>
+                                    <div class="font-regular flex flex-col">
+                                        <span class="text-[24px]">LP Locked</span>
+                                        <span class="text-[16px] text-[#16161A]">
+                                            45% - 2 year lock
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8">
+                                <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+                                        <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V72H40ZM216,200H40V88H216V200Zm-16-64a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,136Zm0,32a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,168ZM80,136a16,16,0,1,1-16-16A16,16,0,0,1,80,136Zm0,32a16,16,0,1,1-16-16A16,16,0,0,1,80,72Z"></path>
+                                    </svg>
+                                    <div class="font-regular flex flex-col">
+                                        <span class="text-[24px]">Treasury</span>
+                                        <span class="text-[16px] text-[#16161A]">
+                                            25% - Development fund
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8">
+                                <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+                                        <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48-88a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"></path>
+                                    </svg>
+                                    <div class="font-regular flex flex-col">
+                                        <span class="text-[24px]">MEME Charity</span>
+                                        <span class="text-[16px] text-[#16161A]">
+                                            15% - Community rewards
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8">
+                                <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+                                        <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V72H40ZM216,200H40V88H216V200Zm-16-64a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,136Zm0,32a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,168ZM80,136a16,16,0,1,1-16-16A16,16,0,0,1,80,136Zm0,32a16,16,0,1,1-16-16A16,16,0,0,1,80,72Z"></path>
+                                    </svg>
+                                    <div class="font-regular flex flex-col">
+                                        <span class="text-[24px]">CEX Listings</span>
+                                        <span class="text-[16px] text-[#16161A]">
+                                            15% - Exchange liquidity
+                                        </span>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="order-3 flex w-full flex-col md:order-2 md:w-1/3">
-                        <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[300px] md:border-l md:border-t-0 md:px-8">
-                            <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
-                                    <path d="M148.24,139.76a6,6,0,0,0-8.48,0L120,159.51,96.49,136l19.75-19.76a6,6,0,0,0-8.48-8.48L88,127.51,68.24,107.76a6,6,0,0,0-8.48,8.48L67.51,124,42.79,148.73a30,30,0,0,0,0,42.42l6.78,6.79L19.76,227.76a6,6,0,1,0,8.48,8.48l29.82-29.81,6.79,6.78a30,30,0,0,0,42.42,0L132,188.49l7.76,7.75a6,6,0,0,0,8.48-8.48L128.49,168l19.75-19.76A6,6,0,0,0,148.24,139.76Zm-49.45,65a18,18,0,0,1-25.46,0L51.27,182.67a18,18,0,0,1,0-25.46L76,132.49,123.51,180Zm137.45-185a6,6,0,0,0-8.48,0L197.94,49.57l-6.79-6.78a30,30,0,0,0-42.42,0L124,67.51l-7.76-7.75a6,6,0,0,0-8.48,8.48l80,80a6,6,0,0,0,8.48-8.48L188.49,132l24.72-24.73a30,30,0,0,0,0-42.42l-6.78-6.79,29.81-29.82A6,6,0,0,0,236.24,19.76Zm-31.51,79L180,123.51,132.49,76l24.72-24.73a18,18,0,0,1,25.46,0l22.06,22.06a18,18,0,0,1,0,25.46Z"></path>
-                                </svg>
-                                <div class="font-regular flex flex-col">
-                                    <span class="text-[24px]">Smart Yield Farming</span>
-                                    <span class="text-[16px] text-[#16161A]">
-                                        Connect pools to build yield chains. DeFi understands your full portfolio strategy, not just isolated positions.
-                                    </span>
+                    <div class="order-1 flex w-full flex-col md:order-2 md:w-1/2">
+                        <div class="flex h-auto items-center justify-center md:h-[300px]">
+                            <div class="relative w-80 h-80">
+                                <canvas id="tokenomicsChart" width="320" height="320"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Roadmap Section -->
+        <div class="flex w-full items-center justify-center px-4 md:px-8">
+            <div class="flex w-full max-w-[1376px] flex-col bg-white py-8 md:py-[124px]">
+                <div class="mb-[64px] flex w-full flex-col gap-y-4 md:mb-[190px]">
+                    <span class="text-[16px]">Roadmap</span>
+                    <div class="flex w-full flex-col justify-between gap-y-4 md:flex-row">
+                        <span class="flex text-[32px]">Development Journey</span>
+                        <span class="w-full text-[18px] md:w-[506px]">
+                            Our strategic roadmap outlines the key milestones and development phases for StashToken's growth and evolution.
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="flex w-full flex-col gap-y-16">
+                    <!-- Roadmap Chart üstte -->
+                    <div class="flex w-full justify-center" style="margin-bottom: 64px;">
+                        <div class="flex h-auto items-center justify-center w-full">
+                            <div class="relative w-full px-8">
+                                <!-- Timeline Chart -->
+                                <div class="flex items-center justify-between relative">
+                                    <!-- Background Chart Line -->
+                                    <div class="absolute top-1/2 left-0 right-0 h-3 bg-gray-200 rounded-full transform -translate-y-1/2"></div>
+                                    
+                                    <!-- Progress Chart Line -->
+                                    <div class="absolute top-1/2 left-0 h-3 bg-gradient-to-r from-[#9AE064] via-[#4A7C59] to-[#2D5A27] rounded-full transform -translate-y-1/2" style="width: 85%;"></div>
+                                    
+                                    <!-- 2025 Milestone -->
+                                    <div class="relative z-10 flex flex-col items-center">
+                                        <div class="w-24 h-24 bg-[#9AE064] rounded-full flex items-center justify-center mb-6 shadow-xl border-4 border-white">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 256 256" class="text-white">
+                                                <path d="M128,56A72,72,0,0,0,56,128c0,39.7,32.3,72,72,72s72-32.3,72-72S167.7,56,128,56Zm0,128a56,56,0,1,1,56-56A56.06,56.06,0,0,1,128,128Zm0-96a40,40,0,1,0,40,40A40,40,0,0,0,128,32Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,96Z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-3xl font-bold text-[#9AE064] mb-2">2025</div>
+                                            <div class="text-lg text-[#7C7C7E] font-medium">STAGE 3</div>
+                                            <div class="text-sm text-[#7C7C7E] mt-1">LAUNCH</div>
+                                            <div class="text-lg font-bold text-[#9AE064] mt-2">85%</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 2026 Milestone -->
+                                    <div class="relative z-10 flex flex-col items-center">
+                                        <div class="w-24 h-24 bg-[#4A7C59] rounded-full flex items-center justify-center mb-6 shadow-xl border-4 border-white">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 256 256" class="text-white">
+                                                <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V72H40ZM216,200H40V88H216V200Zm-16-64a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,136Zm0,32a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,168ZM80,136a16,16,0,1,1-16-16A16,16,0,0,1,80,136Zm0,32a16,16,0,1,1-16-16A16,16,0,0,1,80,72Z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-3xl font-bold text-[#4A7C59] mb-2">2026</div>
+                                            <div class="text-lg text-[#7C7C7E] font-medium">STAGE 4</div>
+                                            <div class="text-sm text-[#7C7C7E] mt-1">EXPANSION</div>
+                                            <div class="text-lg font-bold text-[#4A7C59] mt-2">97%</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 2027 Milestone -->
+                                    <div class="relative z-10 flex flex-col items-center">
+                                        <div class="w-24 h-24 bg-[#2D5A27] rounded-full flex items-center justify-center mb-6 shadow-xl border-4 border-white">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 256 256" class="text-white">
+                                                <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48-88a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-3xl font-bold text-[#2D5A27] mb-2">2027</div>
+                                            <div class="text-lg text-[#7C7C7E] font-medium">COMPLETE</div>
+                                            <div class="text-sm text-[#7C7C7E] mt-1">FULLY LAUNCHED</div>
+                                            <div class="text-lg font-bold text-[#2D5A27] mt-2">100%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Chart Legend -->
+                                <div class="flex justify-center" style="margin-top: 40px;">
+                                    <div class="flex items-center gap-8">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-4 h-4 bg-[#9AE064] rounded-full"></div>
+                                            <span class="text-sm text-[#7C7C7E] font-medium">Progress Line</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-4 h-4 bg-gray-200 rounded-full"></div>
+                                            <span class="text-sm text-[#7C7C7E] font-medium">Timeline</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="order-1 flex w-full flex-col md:order-3 md:w-1/3">
-                        <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[300px] md:border-l md:border-t-0 md:px-8">
-                            <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
-                                    <path d="M172.91,83.09a78,78,0,1,0-89.82,89.82,78,78,0,1,0,89.82-89.82ZM30,96A66,66,0,0,1,160.49,82H160a78.09,78.09,0,0,0-78,78c0,.17,0,.33,0,.49A66.1,66.1,0,0,1,30,96Zm64,64a65.62,65.62,0,0,1,6-27.49L123.49,156A65.62,65.62,0,0,1,96,162c-.65,0-1.3,0-2-.05C94,161.3,94,160.65,94,160Zm40.23-10.25-28-28a66.47,66.47,0,0,1,15.52-15.52l28,28A66.47,66.47,0,0,1,134.23,149.75ZM162,96a65.62,65.62,0,0,1-6,27.49L132.51,100A65.62,65.62,0,0,1,160,94c.65,0,1.3,0,1.95,0C162,94.7,162,95.35,162,96Zm-2,130a66.1,66.1,0,0,1-64.49-52H96a78.09,78.09,0,0,0,78-78c0-.17,0-.33,0-.49A66,66,0,0,1,160,226Z"></path>
-                                </svg>
-                                <div class="font-regular flex flex-col">
-                                    <span class="text-[24px]">Real-time Analytics</span>
-                                    <span class="text-[16px] text-[#16161A]">
-                                        Watch your portfolio evolve into living yield dashboards. See connections, identify patterns, discover opportunities.
-                                    </span>
+                    <!-- Stage kartları altta yan yana -->
+                    <div class="flex w-full justify-center">
+                        <div class="flex flex-row gap-8 w-full justify-between">
+                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8">
+                                <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+                                        <path d="M128,56A72,72,0,0,0,56,128c0,39.7,32.3,72,72,72s72-32.3,72-72S167.7,56,128,56Zm0,128a56,56,0,1,1,56-56A56.06,56.06,0,0,1,128,128Zm0-96a40,40,0,1,0,40,40A40,40,0,0,0,128,32Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,96Z"></path>
+                                    </svg>
+                                    <div class="font-regular flex flex-col">
+                                        <span class="text-[24px]">STAGE 1</span>
+                                        <span class="text-[16px] text-[#16161A]">
+                                            "CONCEPTUALIZATION"
+                                        </span>
+                                        <div class="mt-2 space-y-1">
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-1.5 h-1.5 bg-[#9AE064] rounded-full"></div>
+                                                <span class="text-[14px] text-[#7C7C7E]">Research & Analysis</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-1.5 h-1.5 bg-[#9AE064] rounded-full"></div>
+                                                <span class="text-[14px] text-[#7C7C7E]">Team Building</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-1.5 h-1.5 bg-[#9AE064] rounded-full"></div>
+                                                <span class="text-[14px] text-[#7C7C7E]">Whitepaper</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8">
+                                <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+                                        <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V72H40ZM216,200H40V88H216V200Zm-16-64a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,136Zm0,32a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,168ZM80,136a16,16,0,1,1-16-16A16,16,0,0,1,80,136Zm0,32a16,16,0,1,1-16-16A16,16,0,0,1,80,72Z"></path>
+                                    </svg>
+                                    <div class="font-regular flex flex-col">
+                                        <span class="text-[24px]">STAGE 2</span>
+                                        <span class="text-[16px] text-[#16161A]">
+                                            "DEVELOPMENT"
+                                        </span>
+                                        <div class="mt-2 space-y-1">
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-1.5 h-1.5 bg-[#4A7C59] rounded-full"></div>
+                                                <span class="text-[14px] text-[#7C7C7E]">Smart Contracts</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-1.5 h-1.5 bg-[#4A7C59] rounded-full"></div>
+                                                <span class="text-[14px] text-[#7C7C7E]">Infrastructure</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-1.5 h-1.5 bg-[#4A7C59] rounded-full"></div>
+                                                <span class="text-[14px] text-[#7C7C7E]">Security Audit</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8">
+                                <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+                                        <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48-88a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"></path>
+                                    </svg>
+                                    <div class="font-regular flex flex-col">
+                                        <span class="text-[24px]">STAGE 3</span>
+                                        <span class="text-[16px] text-[#16161A]">
+                                            "LAUNCH"
+                                        </span>
+                                        <div class="mt-2 space-y-1">
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-1.5 h-1.5 bg-[#2D5A27] rounded-full"></div>
+                                                <span class="text-[14px] text-[#7C7C7E]">Mainnet</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-1.5 h-1.5 bg-[#2D5A27] rounded-full"></div>
+                                                <span class="text-[14px] text-[#7C7C7E]">Token Event</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-1.5 h-1.5 bg-[#2D5A27] rounded-full"></div>
+                                                <span class="text-[14px] text-[#7C7C7E]">DEX Listing</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8">
+                                <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+                                        <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V72H40ZM216,200H40V88H216V200Zm-16-64a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,136Zm0,32a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,168ZM80,136a16,16,0,1,1-16-16A16,16,0,0,1,80,136Zm0,32a16,16,0,1,1-16-16A16,16,0,0,1,80,72Z"></path>
+                                    </svg>
+                                    <div class="font-regular flex flex-col">
+                                        <span class="text-[24px]">STAGE 4</span>
+                                        <span class="text-[16px] text-[#16161A]">
+                                            "EXPANSION"
+                                        </span>
+                                        <div class="mt-2 space-y-1">
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-1.5 h-1.5 bg-[#6B9A7A] rounded-full"></div>
+                                                <span class="text-[14px] text-[#7C7C7E]">CEX Listings</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-1.5 h-1.5 bg-[#6B9A7A] rounded-full"></div>
+                                                <span class="text-[14px] text-[#7C7C7E]">DeFi Features</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-1.5 h-1.5 bg-[#6B9A7A] rounded-full"></div>
+                                                <span class="text-[14px] text-[#7C7C7E]">Cross-Chain</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -238,6 +500,7 @@
             </div>
         </div>
 
+      
         <!-- CTA Section -->
         <div class="flex w-full items-center justify-center px-4 py-8 md:px-8 md:py-[56px]">
             <div class="flex w-full max-w-[1376px] flex-col items-center justify-center rounded-lg bg-arcGreen bg-[url('assets/images/cta-background.webp')] bg-cover bg-center p-8">
@@ -261,67 +524,155 @@
         </div>
 
         <!-- FAQ Section -->
-        <div class="flex w-full flex-col items-center justify-center bg-white py-8 md:py-[124px]">
-            <div class="flex w-full items-center justify-center px-4 md:px-8">
-                <div class="flex w-full max-w-[1376px] flex-col gap-y-4">
-                    <span class="text-[16px]">Curious mind asks</span>
-                    <div class="flex w-full flex-col justify-between gap-x-8 gap-y-[64px] md:flex-row">
-                        <span class="flex text-[32px]">FAQ</span>
-                        <div class="flex w-full max-w-[906px] flex-col gap-y-6">
-                            <div class="flex w-full flex-col gap-y-5" data-orientation="vertical">
-                                <div data-state="closed" data-orientation="vertical" class="rounded-lg border border-[#16161A] bg-transparent">
-                                    <h3 data-orientation="vertical" data-state="closed" class="flex">
-                                        <button type="button" aria-controls="radix-_R_2d8auralb_" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-_R_d8auralb_" class="flex-1 items-center font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 flex justify-between px-6 py-6 hover:no-underline" data-radix-collection-item="">
-                                            <span class="text-[20px] text-[#16161A] text-left">What is StashToken?</span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256" class="shrink-0 text-[#16161A]">
-                                                <path d="M128,26A102,102,0,1,0,230,128,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,0,0,1,128,218Zm46-90a6,6,0,0,1-6,6H134v34a6,6,0,0,1-12,0V134H88a6,6,0,0,1,0-12h34V88a6,6,0,0,1,12,0v34h34A6,6,0,0,1,174,128Z"></path>
-                                            </svg>
-                                        </button>
-                                    </h3>
-                                    <div data-state="closed" id="radix-_R_2d8auralb_" hidden="" role="region" aria-labelledby="radix-_R_d8auralb_" data-orientation="vertical" class="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down" style="--radix-accordion-content-height:var(--radix-collapsible-content-height);--radix-accordion-content-width:var(--radix-collapsible-content-width)"></div>
-                                </div>
-                                
-                                <div data-state="closed" data-orientation="vertical" class="rounded-lg border border-[#16161A] bg-transparent">
-                                    <h3 data-orientation="vertical" data-state="closed" class="flex">
-                                        <button type="button" aria-controls="radix-_R_2l8auralb_" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-_R_l8auralb_" class="flex-1 items-center font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 flex justify-between px-6 py-6 hover:no-underline" data-radix-collection-item="">
-                                            <span class="text-[20px] text-[#16161A] text-left">How does StashToken work?</span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256" class="shrink-0 text-[#16161A]">
-                                                <path d="M128,26A102,102,0,1,0,230,128,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,0,0,1,128,218Zm46-90a6,6,0,0,1-6,6H134v34a6,6,0,0,1-12,0V134H88a6,6,0,0,1,0-12h34V88a6,6,0,0,1,12,0v34h34A6,6,0,0,1,174,128Z"></path>
-                                            </svg>
-                                        </button>
-                                    </h3>
-                                    <div data-state="closed" id="radix-_R_2l8auralb_" hidden="" role="region" aria-labelledby="radix-_R_l8auralb_" data-orientation="vertical" class="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down" style="--radix-accordion-content-height:var(--radix-collapsible-content-height);--radix-accordion-content-width:var(--radix-collapsible-content-width)"></div>
-                                </div>
-                                
-                                <div data-state="closed" data-orientation="vertical" class="rounded-lg border border-[#16161A] bg-transparent">
-                                    <h3 data-orientation="vertical" data-state="closed" class="flex">
-                                        <button type="button" aria-controls="radix-_R_2t8auralb_" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-_R_t8auralb_" class="flex-1 items-center font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 flex justify-between px-6 py-6 hover:no-underline" data-radix-collection-item="">
-                                            <span class="text-[20px] text-[#16161A] text-left">How do I get started?</span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256" class="shrink-0 text-[#16161A]">
-                                                <path d="M128,26A102,102,0,1,0,230,128,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,0,0,1,128,218Zm46-90a6,6,0,0,1-6,6H134v34a6,6,0,0,1-12,0V134H88a6,6,0,0,1,0-12h34V88a6,6,0,0,1,12,0v34h34A6,6,0,0,1,174,128Z"></path>
-                                            </svg>
-                                        </button>
-                                    </h3>
-                                    <div data-state="closed" id="radix-_R_2t8auralb_" hidden="" role="region" aria-labelledby="radix-_R_t8auralb_" data-orientation="vertical" class="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down" style="--radix-accordion-content-height:var(--radix-collapsible-content-height);--radix-accordion-content-width:var(--radix-collapsible-content-width)"></div>
-                                </div>
-                                
-                                <div data-state="closed" data-orientation="vertical" class="rounded-lg border border-[#16161A] bg-transparent">
-                                    <h3 data-orientation="vertical" data-state="closed" class="flex">
-                                        <button type="button" aria-controls="radix-_R_358auralb_" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-_R_158auralb_" class="flex-1 items-center font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 flex justify-between px-6 py-6 hover:no-underline" data-radix-collection-item="">
-                                            <span class="text-[20px] text-[#16161A] text-left">What makes StashToken different?</span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256" class="shrink-0 text-[#16161A]">
-                                                <path d="M128,26A102,102,0,1,0,230,128,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,0,0,1,128,218Zm46-90a6,6,0,0,1-6,6H134v34a6,6,0,0,1-12,0V134H88a6,6,0,0,1,0-12h34V88a6,6,0,0,1,12,0v34h34A6,6,0,0,1,174,128Z"></path>
-                                            </svg>
-                                        </button>
-                                    </h3>
-                                    <div data-state="closed" id="radix-_R_358auralb_" hidden="" role="region" aria-labelledby="radix-_R_158auralb_" data-orientation="vertical" class="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down" style="--radix-accordion-content-height:var(--radix-collapsible-content-height);--radix-accordion-content-width:var(--radix-collapsible-content-width)"></div>
-                                </div>
-                            </div>
-                        </div>
+        <div
+        class="flex w-full flex-col items-center justify-center bg-white py-8 md:py-[124px]"
+      >
+        <div class="flex w-full items-center justify-center px-4 md:px-8">
+          <div class="flex w-full max-w-[1376px] flex-col gap-y-4">
+            <span class="text-[16px]">Curious mind asks</span>
+            <div
+              class="flex w-full flex-col justify-between gap-x-8 gap-y-[64px] md:flex-row"
+            >
+              <span class="flex text-[32px]">FAQ</span>
+              <div class="flex w-full max-w-[906px] flex-col gap-y-6">
+                <div
+                  class="flex w-full flex-col gap-y-5"
+                  data-orientation="vertical"
+                >
+                  <div
+                    class="faq-item rounded-lg border border-[#16161A] bg-transparent"
+                  >
+                    <h3 class="flex">
+                      <button
+                        type="button"
+                        class="faq-button flex-1 items-center font-medium transition-all flex justify-between px-6 py-6 hover:no-underline"
+                      >
+                        <span class="text-[20px] text-[#16161A] text-left"
+                          >What is StashToken?</span
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          fill="currentColor"
+                          viewBox="0 0 256 256"
+                          class="faq-icon shrink-0 text-[#16161A] transition-transform duration-300"
+                        >
+                          <path
+                            d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218Zm46-90a6,6,0,0,1-6,6H134v34a6,6,0,0,1-12,0V134H88a6,6,0,0,1,0-12h34V88a6,6,0,0,1,12,0v34h34A6,6,0,0,1,174,128Z"
+                          ></path>
+                        </svg>
+                      </button>
+                    </h3>
+                    <div
+                      class="faq-content overflow-hidden text-sm"
+                    >
+                      <div class="px-6 pb-6 text-[16px] text-[#7C7C7E]">
+                        StashToken is a next-generation decentralized staking protocol that maximizes yield opportunities through intelligent DeFi strategies. It allows users to stake their crypto assets across multiple blockchains and automatically optimize their returns through advanced yield farming and compounding mechanisms.
+                      </div>
                     </div>
+                  </div>
+                  <div
+                    class="faq-item rounded-lg border border-[#16161A] bg-transparent"
+                  >
+                    <h3 class="flex">
+                      <button
+                        type="button"
+                        class="faq-button flex-1 items-center font-medium transition-all flex justify-between px-6 py-6 hover:no-underline"
+                      >
+                        <span class="text-[20px] text-[#16161A] text-left"
+                          >How does StashToken work?</span
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          fill="currentColor"
+                          viewBox="0 0 256 256"
+                          class="faq-icon shrink-0 text-[#16161A] transition-transform duration-300"
+                        >
+                          <path
+                            d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218Zm46-90a6,6,0,0,1-6,6H134v34a6,6,0,0,1-12,0V134H88a6,6,0,0,1,0-12h34V88a6,6,0,0,1,12,0v34h34A6,6,0,0,1,174,128Z"
+                          ></path>
+                        </svg>
+                      </button>
+                    </h3>
+                    <div
+                      class="faq-content overflow-hidden text-sm"
+                    >
+                      <div class="px-6 pb-6 text-[16px] text-[#7C7C7E]">
+                        StashToken connects to multiple DeFi protocols and automatically manages your staking positions. It analyzes yield opportunities across different chains, automatically compounds your rewards, and rebalances your portfolio to maximize returns while minimizing risk through intelligent diversification strategies.
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="faq-item rounded-lg border border-[#16161A] bg-transparent"
+                  >
+                    <h3 class="flex">
+                      <button
+                        type="button"
+                        class="faq-button flex-1 items-center font-medium transition-all flex justify-between px-6 py-6 hover:no-underline"
+                      >
+                        <span class="text-[20px] text-[#16161A] text-left"
+                          >How do I get started?</span
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          fill="currentColor"
+                          viewBox="0 0 256 256"
+                          class="faq-icon shrink-0 text-[#16161A] transition-transform duration-300"
+                        >
+                          <path
+                            d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218Zm46-90a6,6,0,0,1-6,6H134v34a6,6,0,0,1-12,0V134H88a6,6,0,0,1,0-12h34V88a6,6,0,0,1,12,0v34h34A6,6,0,0,1,174,128Z"
+                          ></path>
+                        </svg>
+                      </button>
+                    </h3>
+                    <div
+                      class="faq-content overflow-hidden text-sm"
+                    >
+                      <div class="px-6 pb-6 text-[16px] text-[#7C7C7E]">
+                        Getting started is simple! Connect your existing wallet, choose your preferred staking strategy, and deposit your crypto assets. StashToken will automatically begin optimizing your yields across multiple protocols. You can monitor your portfolio performance in real-time through our intuitive dashboard.
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="faq-item rounded-lg border border-[#16161A] bg-transparent"
+                  >
+                    <h3 class="flex">
+                      <button
+                        type="button"
+                        class="faq-button flex-1 items-center font-medium transition-all flex justify-between px-6 py-6 hover:no-underline"
+                      >
+                        <span class="text-[20px] text-[#16161A] text-left"
+                          >What makes StashToken different?</span
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          fill="currentColor"
+                          viewBox="0 0 256 256"
+                          class="faq-icon shrink-0 text-[#16161A] transition-transform duration-300"
+                        >
+                          <path
+                            d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218Zm46-90a6,6,0,0,1-6,6H134v34a6,6,0,0,1-12,0V134H88a6,6,0,0,1,0-12h34V88a6,6,0,0,1,12,0v34h34A6,6,0,0,1,174,128Z"
+                          ></path>
+                        </svg>
+                      </button>
+                    </h3>
+                    <div
+                      class="faq-content overflow-hidden text-sm"
+                    >
+                      <div class="px-6 pb-6 text-[16px] text-[#7C7C7E]">
+                        Unlike traditional staking platforms, StashToken provides intelligent portfolio management across multiple blockchains. Our advanced algorithms automatically identify the best yield opportunities, compound rewards, and rebalance positions to maximize returns. We focus on long-term wealth building through automated DeFi strategies rather than simple single-protocol staking.
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
 
         <!-- Footer Logo -->
         <div class="flex w-full items-center justify-center px-4 md:px-8">
@@ -367,5 +718,265 @@
             </div>
         </div>
     </div>
+
+    <!-- FAQ JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqButtons = document.querySelectorAll('.faq-button');
+            
+            faqButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const faqItem = this.closest('.faq-item');
+                    const content = faqItem.querySelector('.faq-content');
+                    const icon = faqItem.querySelector('.faq-icon');
+                    const isOpen = content.classList.contains('open');
+                    
+                    // Tüm FAQ öğelerini kapat
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('open');
+                    });
+                    
+                    document.querySelectorAll('.faq-content').forEach(item => {
+                        item.classList.remove('open');
+                    });
+                    
+                    document.querySelectorAll('.faq-icon').forEach(item => {
+                        item.innerHTML = '<path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218Zm46-90a6,6,0,0,1-6,6H134v34a6,6,0,0,1-12,0V134H88a6,6,0,0,1,0-12h34V88a6,6,0,0,1,12,0v34h34A6,6,0,0,1,174,128Z"></path>';
+                    });
+                    
+                    // Eğer tıklanan öğe kapalıysa aç
+                    if (!isOpen) {
+                        faqItem.classList.add('open');
+                        content.classList.add('open');
+                        icon.innerHTML = '<path d="M174,128a6,6,0,0,1-6,6H88a6,6,0,0,1,0-12h80A6,6,0,0,1,174,128Zm56,0A90,90,0,1,1,128,38,90.1,90.1,0,0,1,218,128Zm-12,0a78,78,0,1,0-78,78A78.1,78.1,0,0,0,206,128Z"></path>';
+                    }
+                });
+            });
+            
+            // Tokenomics Chart
+            const ctx = document.getElementById('tokenomicsChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['LP Locked', 'Treasury', 'MEME Charity', 'CEX Listings'],
+                    datasets: [{
+                        data: [45, 25, 15, 15],
+                        backgroundColor: [
+                            '#2D5A27', // LP Locked 45% - En koyu yeşil
+                            '#4A7C59', // Treasury 25% - Orta koyu yeşil
+                            '#6B9A7A', // MEME Charity 15% - Orta açık yeşil
+                            '#9AE064'  // CEX Listings 15% - En açık yeşil
+                        ],
+                        borderWidth: 0,
+                        cutout: '60%'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: false
+                        }
+                    },
+                    elements: {
+                        arc: {
+                            borderWidth: 2,
+                            borderColor: '#ffffff'
+                        }
+                    }
+                },
+                plugins: [{
+                    afterDraw: function(chart) {
+                        const ctx = chart.ctx;
+                        const centerX = chart.chartArea.left + (chart.chartArea.right - chart.chartArea.left) / 2;
+                        const centerY = chart.chartArea.top + (chart.chartArea.bottom - chart.chartArea.top) / 2;
+                        
+                        // Center text
+                        ctx.fillStyle = '#16161A';
+                        ctx.font = 'bold 24px Arial';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('100M', centerX, centerY - 10);
+                        
+                        ctx.font = '14px Arial';
+                        ctx.fillStyle = '#7C7C7E';
+                        ctx.fillText('Total Supply', centerX, centerY + 15);
+                        
+                        // Percentage labels
+                        const radius = (chart.chartArea.right - chart.chartArea.left) / 2 * 0.6;
+                        const data = chart.data.datasets[0].data;
+                        let currentAngle = -Math.PI / 2;
+                        
+                        data.forEach((value, index) => {
+                            const sliceAngle = (value / 100) * 2 * Math.PI;
+                            const labelAngle = currentAngle + sliceAngle / 2;
+                            const labelX = centerX + Math.cos(labelAngle) * (radius + 30);
+                            const labelY = centerY + Math.sin(labelAngle) * (radius + 30);
+                            
+                            // White background for labels
+                            ctx.fillStyle = 'white';
+                            ctx.beginPath();
+                            ctx.roundRect(labelX - 20, labelY - 10, 40, 20, 3);
+                            ctx.fill();
+                            
+                            // Percentage text
+                            ctx.fillStyle = '#16161A';
+                            ctx.font = 'bold 12px Arial';
+                            ctx.textAlign = 'center';
+                            ctx.fillText(value + '%', labelX, labelY + 4);
+                            
+                            currentAngle += sliceAngle;
+                        });
+                    }
+                }]
+            });
+
+            // Roadmap Chart
+            const roadmapCtx = document.getElementById('roadmapChart').getContext('2d');
+            new Chart(roadmapCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Q1 2025', 'Q2 2025', 'Q3 2025', 'Q4 2025', 'Q1 2026', 'Q2 2026', 'Q3 2026', 'Q4 2026', 'Q1 2027', 'Q2 2027'],
+                    datasets: [{
+                        label: 'Development Progress',
+                        data: [85, 90, 92, 95, 97, 98, 99, 100, 100, 100],
+                        borderColor: '#9AE064',
+                        backgroundColor: 'rgba(154, 224, 100, 0.1)',
+                        borderWidth: 4,
+                        fill: true,
+                        tension: 0.3,
+                        pointBackgroundColor: '#9AE064',
+                        pointBorderColor: '#ffffff',
+                        pointBorderWidth: 3,
+                        pointRadius: 6,
+                        pointHoverRadius: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(22, 22, 26, 0.9)',
+                            titleColor: '#ffffff',
+                            bodyColor: '#9AE064',
+                            borderColor: '#9AE064',
+                            borderWidth: 1,
+                            cornerRadius: 8,
+                            displayColors: false,
+                            callbacks: {
+                                title: function(context) {
+                                    return context[0].label;
+                                },
+                                label: function(context) {
+                                    return `Progress: ${context.parsed.y}%`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                color: 'rgba(124, 124, 126, 0.2)',
+                                drawBorder: false
+                            },
+                            ticks: {
+                                color: '#7C7C7E',
+                                font: {
+                                    size: 11,
+                                    weight: '500'
+                                },
+                                maxRotation: 45
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: {
+                                color: 'rgba(124, 124, 126, 0.2)',
+                                drawBorder: false
+                            },
+                            ticks: {
+                                color: '#7C7C7E',
+                                font: {
+                                    size: 12,
+                                    weight: '500'
+                                },
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    },
+                    elements: {
+                        line: {
+                            borderWidth: 4
+                        },
+                        point: {
+                            hoverRadius: 10
+                        }
+                    },
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    }
+                },
+                plugins: [{
+                    afterDraw: function(chart) {
+                        const ctx = chart.ctx;
+                        const chartArea = chart.chartArea;
+                        
+                        // Progress milestones with years
+                        const milestones = [
+                            { x: 0, y: 85, label: '2025', color: '#9AE064', stage: 'STAGE 3' },
+                            { x: 4, y: 97, label: '2026', color: '#4A7C59', stage: 'STAGE 4' },
+                            { x: 8, y: 100, label: '2027', color: '#2D5A27', stage: 'COMPLETE' }
+                        ];
+                        
+                        milestones.forEach((milestone, index) => {
+                            const x = chartArea.left + (milestone.x / (chart.data.labels.length - 1)) * (chartArea.right - chartArea.left);
+                            const y = chartArea.top + ((100 - milestone.y) / 100) * (chartArea.bottom - chartArea.top);
+                            
+                            // Draw milestone line
+                            ctx.strokeStyle = milestone.color;
+                            ctx.lineWidth = 2;
+                            ctx.setLineDash([5, 5]);
+                            ctx.beginPath();
+                            ctx.moveTo(x, chartArea.top);
+                            ctx.lineTo(x, y);
+                            ctx.stroke();
+                            ctx.setLineDash([]);
+                            
+                            // Draw milestone label background
+                            ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
+                            ctx.strokeStyle = milestone.color;
+                            ctx.lineWidth = 2;
+                            ctx.beginPath();
+                            ctx.roundRect(x - 35, y - 30, 70, 60, 8);
+                            ctx.fill();
+                            ctx.stroke();
+                            
+                            // Draw milestone label text
+                            ctx.fillStyle = milestone.color;
+                            ctx.font = 'bold 14px Arial';
+                            ctx.textAlign = 'center';
+                            ctx.fillText(milestone.label, x, y - 10);
+                            
+                            ctx.fillStyle = '#7C7C7E';
+                            ctx.font = '10px Arial';
+                            ctx.fillText(milestone.stage, x, y + 5);
+                        });
+                    }
+                }]
+            });
+        });
+    </script>
+    
 </body>
 </html>
