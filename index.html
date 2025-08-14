@@ -305,77 +305,12 @@
                 </div>
                 
                 <div class="flex w-full flex-col gap-y-16">
-                    <!-- Roadmap Chart üstte -->
+                    <!-- Infografik SVG üstte -->
                     <div class="flex w-full justify-center" style="margin-bottom: 64px;">
                         <div class="flex h-auto items-center justify-center w-full">
                             <div class="relative w-full px-8">
-                                <!-- Timeline Chart -->
-                                <div class="flex items-center justify-between relative">
-                                    <!-- Background Chart Line -->
-                                    <div class="absolute top-1/2 left-0 right-0 h-3 bg-gray-200 rounded-full transform -translate-y-1/2"></div>
-                                    
-                                    <!-- Progress Chart Line -->
-                                    <div class="absolute top-1/2 left-0 h-3 bg-gradient-to-r from-[#9AE064] via-[#4A7C59] to-[#2D5A27] rounded-full transform -translate-y-1/2" style="width: 85%;"></div>
-                                    
-                                    <!-- 2025 Milestone -->
-                                    <div class="relative z-10 flex flex-col items-center">
-                                        <div class="w-24 h-24 bg-[#9AE064] rounded-full flex items-center justify-center mb-6 shadow-xl border-4 border-white">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 256 256" class="text-white">
-                                                <path d="M128,56A72,72,0,0,0,56,128c0,39.7,32.3,72,72,72s72-32.3,72-72S167.7,56,128,56Zm0,128a56,56,0,1,1,56-56A56.06,56.06,0,0,1,128,128Zm0-96a40,40,0,1,0,40,40A40,40,0,0,0,128,32Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,96Z"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="text-3xl font-bold text-[#9AE064] mb-2">2025</div>
-                                            <div class="text-lg text-[#7C7C7E] font-medium">STAGE 3</div>
-                                            <div class="text-sm text-[#7C7C7E] mt-1">LAUNCH</div>
-                                            <div class="text-lg font-bold text-[#9AE064] mt-2">85%</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- 2026 Milestone -->
-                                    <div class="relative z-10 flex flex-col items-center">
-                                        <div class="w-24 h-24 bg-[#4A7C59] rounded-full flex items-center justify-center mb-6 shadow-xl border-4 border-white">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 256 256" class="text-white">
-                                                <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V72H40ZM216,200H40V88H216V200Zm-16-64a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,136Zm0,32a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,168ZM80,136a16,16,0,1,1-16-16A16,16,0,0,1,80,136Zm0,32a16,16,0,1,1-16-16A16,16,0,0,1,80,72Z"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="text-3xl font-bold text-[#4A7C59] mb-2">2026</div>
-                                            <div class="text-lg text-[#7C7C7E] font-medium">STAGE 4</div>
-                                            <div class="text-sm text-[#7C7C7E] mt-1">EXPANSION</div>
-                                            <div class="text-lg font-bold text-[#4A7C59] mt-2">97%</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- 2027 Milestone -->
-                                    <div class="relative z-10 flex flex-col items-center">
-                                        <div class="w-24 h-24 bg-[#2D5A27] rounded-full flex items-center justify-center mb-6 shadow-xl border-4 border-white">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 256 256" class="text-white">
-                                                <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48-88a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="text-3xl font-bold text-[#2D5A27] mb-2">2027</div>
-                                            <div class="text-lg text-[#7C7C7E] font-medium">COMPLETE</div>
-                                            <div class="text-sm text-[#7C7C7E] mt-1">FULLY LAUNCHED</div>
-                                            <div class="text-lg font-bold text-[#2D5A27] mt-2">100%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Chart Legend -->
-                                <div class="flex justify-center" style="margin-top: 40px;">
-                                    <div class="flex items-center gap-8">
-                                        <div class="flex items-center gap-3">
-                                            <div class="w-4 h-4 bg-[#9AE064] rounded-full"></div>
-                                            <span class="text-sm text-[#7C7C7E] font-medium">Progress Line</span>
-                                        </div>
-                                        <div class="flex items-center gap-3">
-                                            <div class="w-4 h-4 bg-gray-200 rounded-full"></div>
-                                            <span class="text-sm text-[#7C7C7E] font-medium">Timeline</span>
-                                        </div>
-                                    </div>
-                                </div>
+                                <!-- Infografik SVG -->
+                                <img src="assets/images/infografik.svg" alt="Roadmap Infographic" class="w-full max-w-6xl mx-auto" />
                             </div>
                         </div>
                     </div>
@@ -383,7 +318,7 @@
                     <!-- Stage kartları altta yan yana -->
                     <div class="flex w-full justify-center">
                         <div class="flex flex-row gap-8 w-full justify-between">
-                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8">
+                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8 w-1/4">
                                 <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
                                         <path d="M128,56A72,72,0,0,0,56,128c0,39.7,32.3,72,72,72s72-32.3,72-72S167.7,56,128,56Zm0,128a56,56,0,1,1,56-56A56.06,56.06,0,0,1,128,128Zm0-96a40,40,0,1,0,40,40A40,40,0,0,0,128,32Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,96Z"></path>
@@ -411,7 +346,7 @@
                                 </div>
                             </div>
                             
-                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8">
+                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8 w-1/4">
                                 <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
                                         <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V72H40ZM216,200H40V88H216V200Zm-16-64a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,136Zm0,32a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,168ZM80,136a16,16,0,1,1-16-16A16,16,0,0,1,80,136Zm0,32a16,16,0,1,1-16-16A16,16,0,0,1,80,72Z"></path>
@@ -439,7 +374,7 @@
                                 </div>
                             </div>
                             
-                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8">
+                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8 w-1/4">
                                 <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
                                         <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48-88a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"></path>
@@ -467,7 +402,7 @@
                                 </div>
                             </div>
                             
-                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8">
+                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:border-r md:px-8 w-1/4">
                                 <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
                                         <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V72H40ZM216,200H40V88H216V200Zm-16-64a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,136Zm0,32a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,168ZM80,136a16,16,0,1,1-16-16A16,16,0,0,1,80,136Zm0,32a16,16,0,1,1-16-16A16,16,0,0,1,80,72Z"></path>
