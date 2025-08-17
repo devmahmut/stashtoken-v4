@@ -79,6 +79,60 @@
         .faq-item.open .faq-icon {
             transform: rotate(45deg);
         }
+        
+        /* Roadmap Styles */
+        .quarter-btn {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quarter-btn.active .w-6 {
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(154, 224, 100, 0.5);
+        }
+        
+        .quarter-btn.active span {
+            color: #9AE064;
+            font-weight: 600;
+        }
+        
+        .quarter-btn:not(.active) .w-6 {
+            transform: scale(1);
+            box-shadow: 0 0 0 rgba(154, 224, 100, 0);
+        }
+        
+        .quarter-btn:not(.active) span {
+            color: #16161A;
+            font-weight: 500;
+        }
+        
+        .stage-card {
+            opacity: 1;
+            transform: scale(1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+        
+        .stage-content {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transform: translateY(-10px);
+            transition: all 0.4s ease;
+        }
+        
+        .stage-card.active .stage-content {
+            max-height: 200px;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .quarter-line {
+            position: relative;
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, #9AE064, #4A7C59, #2D5A27);
+        }
     </style>
 </head>
 <body>
@@ -305,126 +359,135 @@
                 </div>
                 
                 <div class="flex w-full flex-col gap-y-16">
-                    <!-- Infografik SVG üstte -->
-                    <div class="flex w-full justify-center" style="margin-bottom: 64px;">
-                        <div class="flex h-auto items-center justify-center w-full">
-                            <div class="relative w-full px-8">
-                                <!-- Infografik SVG -->
-                                <img src="assets/images/infografik.svg" alt="Roadmap Infographic" class="w-full max-w-6xl mx-auto" />
-                            </div>
+                    <!-- Q1, Q2, Q3, Q4 Noktaları -->
+                    <div class="flex w-full justify-center mb-16">
+                        <div class="flex items-center w-full max-w-4xl">
+                            <button class="quarter-btn flex items-center justify-center flex-col" data-quarter="q1">
+                                <div class="w-6 h-6 bg-[#9AE064] rounded-full border-4 border-[#9AE064] shadow-lg transition-all duration-300 hover:scale-110"></div>
+                                <span class="text-[18px] font-medium text-[#16161A] mt-3 block">Q1-2025</span>
+                            </button>
+                            <div class="quarter-line mx-8"></div>
+                            <button class="quarter-btn flex items-center justify-center flex-col" data-quarter="q2">
+                                <div class="w-6 h-6 bg-[#9AE064] rounded-full border-4 border-[#9AE064] shadow-lg transition-all duration-300 hover:scale-110"></div>
+                                <span class="text-[18px] font-medium text-[#16161A] mt-3 block">Q2-2026</span>
+                            </button>
+                            <div class="quarter-line mx-8"></div>
+                            <button class="quarter-btn flex items-center justify-center flex-col" data-quarter="q3">
+                                <div class="w-6 h-6 bg-[#9AE064] rounded-full border-4 border-[#9AE064] shadow-lg transition-all duration-300 hover:scale-110"></div>
+                                <span class="text-[18px] font-medium text-[#16161A] mt-3 block">Q3-2027</span>
+                            </button>
+                            <div class="quarter-line mx-8"></div>
+                            <button class="quarter-btn flex items-center justify-center flex-col" data-quarter="q4">
+                                <div class="w-6 h-6 bg-[#9AE064] rounded-full border-4 border-[#9AE064] shadow-lg transition-all duration-300 hover:scale-110"></div>
+                                <span class="text-[18px] font-medium text-[#16161A] mt-3 block">Q4-2028</span>
+                            </button>
                         </div>
                     </div>
                     
-                    <!-- Stage kartları altta yan yana -->
-                    <div class="flex w-full justify-center">
-                        <div class="flex flex-row gap-8 w-full justify-between">
-                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8 w-1/4">
-                                <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
-                                        <path d="M128,56A72,72,0,0,0,56,128c0,39.7,32.3,72,72,72s72-32.3,72-72S167.7,56,128,56Zm0,128a56,56,0,1,1,56-56A56.06,56.06,0,0,1,128,128Zm0-96a40,40,0,1,0,40,40A40,40,0,0,0,128,32Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,96Z"></path>
-                                    </svg>
-                                    <div class="font-regular flex flex-col">
-                                        <span class="text-[24px]">STAGE 1</span>
-                                        <span class="text-[16px] text-[#16161A]">
-                                            "CONCEPTUALIZATION"
-                                        </span>
-                                        <div class="mt-2 space-y-1">
-                                            <div class="flex items-center gap-2">
-                                                <div class="w-1.5 h-1.5 bg-[#9AE064] rounded-full"></div>
-                                                <span class="text-[14px] text-[#7C7C7E]">Research & Analysis</span>
-                                            </div>
-                                            <div class="flex items-center gap-2">
-                                                <div class="w-1.5 h-1.5 bg-[#9AE064] rounded-full"></div>
-                                                <span class="text-[14px] text-[#7C7C7E]">Team Building</span>
-                                            </div>
-                                            <div class="flex items-center gap-2">
-                                                <div class="w-1.5 h-1.5 bg-[#9AE064] rounded-full"></div>
-                                                <span class="text-[14px] text-[#7C7C7E]">Whitepaper</span>
-                                            </div>
+                    <!-- Stage Kartları -->
+                    <div class="flex flex-row gap-6 w-full justify-between">
+                        <!-- Q1 Kartı -->
+                        <div class="stage-card w-1/4" data-quarter="q1">
+                            <div class="bg-white border-2 border-[#9AE064] rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-3 h-3 bg-[#9AE064] rounded-full"></div>
+                                    <h3 class="text-[20px] font-semibold text-[#16161A]">STAGE 1</h3>
+                                </div>
+                                <h4 class="text-[16px] font-medium text-[#7C7C7E] mb-4">"CONCEPTUALIZATION"</h4>
+                                <div class="stage-content">
+                                    <div class="space-y-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <span class="text-[14px] text-[#16161A]">Research & Analysis</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <span class="text-[14px] text-[#16161A]">Team Building</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <span class="text-[14px] text-[#16161A]">Whitepaper</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8 w-1/4">
-                                <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
-                                        <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V72H40ZM216,200H40V88H216V200Zm-16-64a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,136Zm0,32a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,168ZM80,136a16,16,0,1,1-16-16A16,16,0,0,1,80,136Zm0,32a16,16,0,1,1-16-16A16,16,0,0,1,80,72Z"></path>
-                                    </svg>
-                                    <div class="font-regular flex flex-col">
-                                        <span class="text-[24px]">STAGE 2</span>
-                                        <span class="text-[16px] text-[#16161A]">
-                                            "DEVELOPMENT"
-                                        </span>
-                                        <div class="mt-2 space-y-1">
-                                            <div class="flex items-center gap-2">
-                                                <div class="w-1.5 h-1.5 bg-[#4A7C59] rounded-full"></div>
-                                                <span class="text-[14px] text-[#7C7C7E]">Smart Contracts</span>
-                                            </div>
-                                            <div class="flex items-center gap-2">
-                                                <div class="w-1.5 h-1.5 bg-[#4A7C59] rounded-full"></div>
-                                                <span class="text-[14px] text-[#7C7C7E]">Infrastructure</span>
-                                            </div>
-                                            <div class="flex items-center gap-2">
-                                                <div class="w-1.5 h-1.5 bg-[#4A7C59] rounded-full"></div>
-                                                <span class="text-[14px] text-[#7C7C7E]">Security Audit</span>
-                                            </div>
+                        </div>
+                        
+                        <!-- Q2 Kartı -->
+                        <div class="stage-card w-1/4" data-quarter="q2">
+                            <div class="bg-white border-2 border-[#4A7C59] rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-3 h-3 bg-[#9AE064] rounded-full"></div>
+                                    <h3 class="text-[20px] font-semibold text-[#16161A]">STAGE 2</h3>
+                                </div>
+                                <h4 class="text-[16px] font-medium text-[#7C7C7E] mb-4">"DEVELOPMENT"</h4>
+                                <div class="stage-content">
+                                    <div class="space-y-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <span class="text-[14px] text-[#16161A]">Smart Contracts</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <span class="text-[14px] text-[#16161A]">Infrastructure</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <span class="text-[14px] text-[#16161A]">Security Audit</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8 w-1/4">
-                                <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
-                                        <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48-88a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"></path>
-                                    </svg>
-                                    <div class="font-regular flex flex-col">
-                                        <span class="text-[24px]">STAGE 3</span>
-                                        <span class="text-[16px] text-[#16161A]">
-                                            "LAUNCH"
-                                        </span>
-                                        <div class="mt-2 space-y-1">
-                                            <div class="flex items-center gap-2">
-                                                <div class="w-1.5 h-1.5 bg-[#2D5A27] rounded-full"></div>
-                                                <span class="text-[14px] text-[#7C7C7E]">Mainnet</span>
-                                            </div>
-                                            <div class="flex items-center gap-2">
-                                                <div class="w-1.5 h-1.5 bg-[#2D5A27] rounded-full"></div>
-                                                <span class="text-[14px] text-[#7C7C7E]">Token Event</span>
-                                            </div>
-                                            <div class="flex items-center gap-2">
-                                                <div class="w-1.5 h-1.5 bg-[#2D5A27] rounded-full"></div>
-                                                <span class="text-[14px] text-[#7C7C7E]">DEX Listing</span>
-                                            </div>
+                        </div>
+                        
+                        <!-- Q3 Kartı -->
+                        <div class="stage-card w-1/4" data-quarter="q3">
+                            <div class="bg-white border-2 border-[#2D5A27] rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-3 h-3 bg-[#9AE064] rounded-full"></div>
+                                    <h3 class="text-[20px] font-semibold text-[#16161A]">STAGE 3</h3>
+                                </div>
+                                <h4 class="text-[16px] font-medium text-[#7C7C7E] mb-4">"LAUNCH"</h4>
+                                <div class="stage-content">
+                                    <div class="space-y-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <span class="text-[14px] text-[#16161A]">Mainnet</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <span class="text-[14px] text-[#16161A]">Token Event</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <span class="text-[14px] text-[#16161A]">DEX Listing</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:border-r md:px-8 w-1/4">
-                                <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
-                                        <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V72H40ZM216,200H40V88H216V200Zm-16-64a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,136Zm0,32a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,168ZM80,136a16,16,0,1,1-16-16A16,16,0,0,1,80,136Zm0,32a16,16,0,1,1-16-16A16,16,0,0,1,80,72Z"></path>
-                                    </svg>
-                                    <div class="font-regular flex flex-col">
-                                        <span class="text-[24px]">STAGE 4</span>
-                                        <span class="text-[16px] text-[#16161A]">
-                                            "EXPANSION"
-                                        </span>
-                                        <div class="mt-2 space-y-1">
-                                            <div class="flex items-center gap-2">
-                                                <div class="w-1.5 h-1.5 bg-[#6B9A7A] rounded-full"></div>
-                                                <span class="text-[14px] text-[#7C7C7E]">CEX Listings</span>
-                                            </div>
-                                            <div class="flex items-center gap-2">
-                                                <div class="w-1.5 h-1.5 bg-[#6B9A7A] rounded-full"></div>
-                                                <span class="text-[14px] text-[#7C7C7E]">DeFi Features</span>
-                                            </div>
-                                            <div class="flex items-center gap-2">
-                                                <div class="w-1.5 h-1.5 bg-[#6B9A7A] rounded-full"></div>
-                                                <span class="text-[14px] text-[#7C7C7E]">Cross-Chain</span>
-                                            </div>
+                        </div>
+                        
+                        <!-- Q4 Kartı -->
+                        <div class="stage-card w-1/4" data-quarter="q4">
+                            <div class="bg-white border-2 border-[#6B9A7A] rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-3 h-3 bg-[#9AE064] rounded-full"></div>
+                                    <h3 class="text-[20px] font-semibold text-[#16161A]">STAGE 4</h3>
+                                </div>
+                                <h4 class="text-[16px] font-medium text-[#7C7C7E] mb-4">"EXPANSION"</h4>
+                                <div class="stage-content">
+                                    <div class="space-y-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <span class="text-[14px] text-[#16161A]">CEX Listings</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <span class="text-[14px] text-[#16161A]">DeFi Features</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-2 h-2 bg-[#6B9A7A] rounded-full"></div>
+                                            <span class="text-[14px] text-[#16161A]">Cross-Chain</span>
                                         </div>
                                     </div>
                                 </div>
@@ -687,6 +750,51 @@
                     }
                 });
             });
+            
+            // Roadmap Functionality - Q'lara VE stage kartlarına tıklayınca açıklamalar açılsın
+            const quarterBtns = document.querySelectorAll('.quarter-btn');
+            const stageCards = document.querySelectorAll('.stage-card');
+            
+            // Q butonlarına tıklama
+            quarterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const quarter = this.getAttribute('data-quarter');
+                    activateQuarter(quarter);
+                });
+            });
+            
+            // Stage kartlarına tıklama
+            stageCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const quarter = this.getAttribute('data-quarter');
+                    activateQuarter(quarter);
+                });
+            });
+            
+            // Quarter'ı aktif etme fonksiyonu
+            function activateQuarter(quarter) {
+                // Tüm butonlardan active class'ını kaldır
+                quarterBtns.forEach(b => b.classList.remove('active'));
+                
+                // Tüm kartlardan active class'ını kaldır
+                stageCards.forEach(card => card.classList.remove('active'));
+                
+                // İlgili Q butonunu aktif et
+                const targetBtn = document.querySelector(`.quarter-btn[data-quarter="${quarter}"]`);
+                if (targetBtn) {
+                    targetBtn.classList.add('active');
+                }
+                
+                // İlgili stage kartını aktif et
+                const targetCard = document.querySelector(`.stage-card[data-quarter="${quarter}"]`);
+                if (targetCard) {
+                    targetCard.classList.add('active');
+                }
+            }
+            
+            // Sayfa yüklendiğinde hiçbir Q ve kart aktif olmasın
+            quarterBtns.forEach(btn => btn.classList.remove('active'));
+            stageCards.forEach(card => card.classList.remove('active'));
             
             // Tokenomics Chart
             const ctx = document.getElementById('tokenomicsChart').getContext('2d');
