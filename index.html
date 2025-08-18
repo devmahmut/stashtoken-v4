@@ -44,10 +44,10 @@
     <!-- Progress Bar Styles -->
     <style>
         #nprogress{pointer-events:none}
-        #nprogress .bar{background:#9AE064;position:fixed;z-index:1600;top: 0;left:0;width:100%;height:3px}
-        #nprogress .peg{display:block;position:absolute;right:0;width:100px;height:100%;box-shadow:0 0 10px #9AE064,0 0 5px #9AE064;opacity:1;-webkit-transform:rotate(3deg) translate(0px,-4px);-ms-transform:rotate(3deg) translate(0px,-4px);transform:rotate(3deg) translate(0px,-4px)}
+        #nprogress .bar{background:#ffae1e;position:fixed;z-index:1600;top: 0;left:0;width:100%;height:3px}
+        #nprogress .peg{display:block;position:absolute;right:0;width:100px;height:100%;box-shadow:0 0 10px #ffae1e,0 0 5px #ffae1e;opacity:1;-webkit-transform:rotate(3deg) translate(0px,-4px);-ms-transform:rotate(3deg) translate(0px,-4px);transform:rotate(3deg) translate(0px,-4px)}
         #nprogress .spinner{display:block;position:fixed;z-index:1600;top: 15px;right:15px}
-        #nprogress .spinner-icon{width:18px;height:18px;box-sizing:border-box;border:2px solid transparent;border-top-color:#9AE064;border-left-color:#9AE064;border-radius:50%;-webkit-animation:nprogress-spinner 400ms linear infinite;animation:nprogress-spinner 400ms linear infinite}
+        #nprogress .spinner-icon{width:18px;height:18px;box-sizing:border-box;border:2px solid transparent;border-top-color:#ffae1e;border-left-color:#ffae1e;border-radius:50%;-webkit-animation:nprogress-spinner 400ms linear infinite;animation:nprogress-spinner 400ms linear infinite}
         .nprogress-custom-parent{overflow:hidden;position:relative}
         .nprogress-custom-parent #nprogress .bar,.nprogress-custom-parent #nprogress .spinner{position:absolute}
         @-webkit-keyframes nprogress-spinner{0%{-webkit-transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg)}}
@@ -92,7 +92,7 @@
         }
         
         .quarter-btn.active span {
-            color: #9AE064;
+            color: #ffae1e;
             font-weight: 600;
         }
         
@@ -131,7 +131,7 @@
             position: relative;
             flex: 1;
             height: 2px;
-            background: linear-gradient(90deg, #9AE064, #4A7C59, #2D5A27);
+            background: linear-gradient(90deg, #ffae1e, #4A7C59, #2D5A27);
         }
     </style>
 </head>
@@ -164,7 +164,7 @@
         <div class="relative w-full pt-[calc(108px_+_54px)] md:pt-[calc(108px_+_92px)]">
             <div class="relative flex h-full flex-col items-center justify-center">
                 <div class="mb-6 flex h-8 w-[412px] items-center rounded-lg bg-arcGreen px-3 text-[14px]">
-                                         <div class="animate-pulse rounded-md h-4 w-full bg-white/20 justify-center items-center flex">
+                                         <div class="rounded-md h-4 w-full justify-center items-center flex">
                          <span>🚀 StashToken Mainnet is Live!
                              Start earning rewards</span>
                      </div>
@@ -346,9 +346,11 @@
 
 
         <!-- Roadmap Section -->
-        <div class="flex w-full items-center justify-center px-4 md:px-8">
-            <div class="flex w-full max-w-[1376px] flex-col bg-white py-8 md:py-[124px]">
-                <div class="mb-[64px] flex w-full flex-col gap-y-4 md:mb-[190px]">
+        <div class="flex w-full text-white items-center justify-center px-4 md:px-8 relative min-h-screen md:min-h-screen overflow-hidden">
+            <!-- Roadmap Background -->
+            <img src="assets/images/rm-bg.svg" alt="Roadmap Background" class="absolute inset-0 w-full h-full object-contain md:object-cover">
+            <div class="flex w-full max-w-[1376px] flex-col py-4 md:py-8 lg:py-[124px] relative z-10 px-4">
+                <div class="mb-[64px] flex w-full flex-col gap-y-4">
                     <span class="text-[16px]">Roadmap</span>
                     <div class="flex w-full flex-col justify-between gap-y-4 md:flex-row">
                         <span class="flex text-[32px]">Development Journey</span>
@@ -360,52 +362,59 @@
                 
                 <div class="flex w-full flex-col gap-y-16">
                     <!-- Q1, Q2, Q3, Q4 Noktaları -->
-                    <div class="flex w-full justify-center mb-16">
-                        <div class="flex items-center w-full max-w-4xl">
-                            <button class="quarter-btn flex items-center justify-center flex-col" data-quarter="q1">
-                                <div class="w-6 h-6 bg-[#9AE064] rounded-full border-4 border-[#9AE064] shadow-lg transition-all duration-300 hover:scale-110"></div>
-                                <span class="text-[18px] font-medium text-[#16161A] mt-3 block">Q1-2025</span>
+                    <div class="flex w-full justify-center mb-8">
+                                                <div class="relative w-full flex justify-center">
+                            <!-- Custom Chart SVG -->
+                            <img src="assets/images/infografik.svg" alt="Roadmap" class="h-auto" style="width: 50%; max-width: 800px;">
+                            
+                                                        <button class="quarter-btn quarter-btn-1 absolute flex items-center justify-center flex-col" data-quarter="q1">
+                                <svg class="w-3 h-3 text-[#ffae1e] opacity-40 transition-all duration-300 hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
                             </button>
-                            <div class="quarter-line mx-8"></div>
-                            <button class="quarter-btn flex items-center justify-center flex-col" data-quarter="q2">
-                                <div class="w-6 h-6 bg-[#9AE064] rounded-full border-4 border-[#9AE064] shadow-lg transition-all duration-300 hover:scale-110"></div>
-                                <span class="text-[18px] font-medium text-[#16161A] mt-3 block">Q2-2026</span>
+                            
+                            <button class="quarter-btn quarter-btn-2 absolute flex items-center justify-center flex-col" data-quarter="q2">
+                                <svg class="w-3 h-3 text-[#ffae1e] opacity-40 transition-all duration-300 hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
                             </button>
-                            <div class="quarter-line mx-8"></div>
-                            <button class="quarter-btn flex items-center justify-center flex-col" data-quarter="q3">
-                                <div class="w-6 h-6 bg-[#9AE064] rounded-full border-4 border-[#9AE064] shadow-lg transition-all duration-300 hover:scale-110"></div>
-                                <span class="text-[18px] font-medium text-[#16161A] mt-3 block">Q3-2027</span>
+                            
+                            <button class="quarter-btn quarter-btn-3 absolute flex items-center justify-center flex-col" data-quarter="q3">
+                                <svg class="w-3 h-3 text-[#ffae1e] opacity-40 transition-all duration-300 hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
                             </button>
-                            <div class="quarter-line mx-8"></div>
-                            <button class="quarter-btn flex items-center justify-center flex-col" data-quarter="q4">
-                                <div class="w-6 h-6 bg-[#9AE064] rounded-full border-4 border-[#9AE064] shadow-lg transition-all duration-300 hover:scale-110"></div>
-                                <span class="text-[18px] font-medium text-[#16161A] mt-3 block">Q4-2028</span>
+                            
+                            <button class="quarter-btn quarter-btn-4 absolute flex items-center justify-center flex-col" data-quarter="q4">
+                                <svg class="w-3 h-3 text-[#ffae1e] opacity-40 transition-all duration-300 hover:scale-110" fill="currentColor" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
                             </button>
                         </div>
                     </div>
                     
                     <!-- Stage Kartları -->
-                    <div class="flex flex-row gap-6 w-full justify-between">
+                    <div class="flex flex-col md:flex-row gap-4 md:gap-8 w-full justify-between mt-8">
                         <!-- Q1 Kartı -->
-                        <div class="stage-card w-1/4" data-quarter="q1">
-                            <div class="bg-white border-2 border-[#9AE064] rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
+                        <div class="stage-card w-full md:w-1/4" data-quarter="q1">
+                            <div class="bg-white border-2 border-[#ffae1e] rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
                                 <div class="flex items-center gap-3 mb-4">
-                                    <div class="w-3 h-3 bg-[#9AE064] rounded-full"></div>
+                                    <div class="w-3 h-3 bg-[#ffae1e] rounded-full"></div>
                                     <h3 class="text-[20px] font-semibold text-[#16161A]">STAGE 1</h3>
                                 </div>
                                 <h4 class="text-[16px] font-medium text-[#7C7C7E] mb-4">"CONCEPTUALIZATION"</h4>
                                 <div class="stage-content">
                                     <div class="space-y-3">
                                         <div class="flex items-center gap-3">
-                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <div class="w-2 h-2 bg-[#ffae1e] rounded-full"></div>
                                             <span class="text-[14px] text-[#16161A]">Research & Analysis</span>
                                         </div>
                                         <div class="flex items-center gap-3">
-                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <div class="w-2 h-2 bg-[#ffae1e] rounded-full"></div>
                                             <span class="text-[14px] text-[#16161A]">Team Building</span>
                                         </div>
                                         <div class="flex items-center gap-3">
-                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <div class="w-2 h-2 bg-[#ffae1e] rounded-full"></div>
                                             <span class="text-[14px] text-[#16161A]">Whitepaper</span>
                                         </div>
                                     </div>
@@ -414,25 +423,25 @@
                         </div>
                         
                         <!-- Q2 Kartı -->
-                        <div class="stage-card w-1/4" data-quarter="q2">
+                        <div class="stage-card w-full md:w-1/4" data-quarter="q2">
                             <div class="bg-white border-2 border-[#4A7C59] rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
                                 <div class="flex items-center gap-3 mb-4">
-                                    <div class="w-3 h-3 bg-[#9AE064] rounded-full"></div>
+                                    <div class="w-3 h-3 bg-[#ffae1e] rounded-full"></div>
                                     <h3 class="text-[20px] font-semibold text-[#16161A]">STAGE 2</h3>
                                 </div>
                                 <h4 class="text-[16px] font-medium text-[#7C7C7E] mb-4">"DEVELOPMENT"</h4>
                                 <div class="stage-content">
                                     <div class="space-y-3">
                                         <div class="flex items-center gap-3">
-                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <div class="w-2 h-2 bg-[#ffae1e] rounded-full"></div>
                                             <span class="text-[14px] text-[#16161A]">Smart Contracts</span>
                                         </div>
                                         <div class="flex items-center gap-3">
-                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <div class="w-2 h-2 bg-[#ffae1e] rounded-full"></div>
                                             <span class="text-[14px] text-[#16161A]">Infrastructure</span>
                                         </div>
                                         <div class="flex items-center gap-3">
-                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <div class="w-2 h-2 bg-[#ffae1e] rounded-full"></div>
                                             <span class="text-[14px] text-[#16161A]">Security Audit</span>
                                         </div>
                                     </div>
@@ -441,25 +450,25 @@
                         </div>
                         
                         <!-- Q3 Kartı -->
-                        <div class="stage-card w-1/4" data-quarter="q3">
+                        <div class="stage-card w-full md:w-1/4" data-quarter="q3">
                             <div class="bg-white border-2 border-[#2D5A27] rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
                                 <div class="flex items-center gap-3 mb-4">
-                                    <div class="w-3 h-3 bg-[#9AE064] rounded-full"></div>
+                                    <div class="w-3 h-3 bg-[#ffae1e] rounded-full"></div>
                                     <h3 class="text-[20px] font-semibold text-[#16161A]">STAGE 3</h3>
                                 </div>
                                 <h4 class="text-[16px] font-medium text-[#7C7C7E] mb-4">"LAUNCH"</h4>
                                 <div class="stage-content">
                                     <div class="space-y-3">
                                         <div class="flex items-center gap-3">
-                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <div class="w-2 h-2 bg-[#ffae1e] rounded-full"></div>
                                             <span class="text-[14px] text-[#16161A]">Mainnet</span>
                                         </div>
                                         <div class="flex items-center gap-3">
-                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <div class="w-2 h-2 bg-[#ffae1e] rounded-full"></div>
                                             <span class="text-[14px] text-[#16161A]">Token Event</span>
                                         </div>
                                         <div class="flex items-center gap-3">
-                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <div class="w-2 h-2 bg-[#ffae1e] rounded-full"></div>
                                             <span class="text-[14px] text-[#16161A]">DEX Listing</span>
                                         </div>
                                     </div>
@@ -468,21 +477,21 @@
                         </div>
                         
                         <!-- Q4 Kartı -->
-                        <div class="stage-card w-1/4" data-quarter="q4">
+                        <div class="stage-card w-full md:w-1/4" data-quarter="q4">
                             <div class="bg-white border-2 border-[#6B9A7A] rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
                                 <div class="flex items-center gap-3 mb-4">
-                                    <div class="w-3 h-3 bg-[#9AE064] rounded-full"></div>
+                                    <div class="w-3 h-3 bg-[#ffae1e] rounded-full"></div>
                                     <h3 class="text-[20px] font-semibold text-[#16161A]">STAGE 4</h3>
                                 </div>
                                 <h4 class="text-[16px] font-medium text-[#7C7C7E] mb-4">"EXPANSION"</h4>
                                 <div class="stage-content">
                                     <div class="space-y-3">
                                         <div class="flex items-center gap-3">
-                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <div class="w-2 h-2 bg-[#ffae1e] rounded-full"></div>
                                             <span class="text-[14px] text-[#16161A]">CEX Listings</span>
                                         </div>
                                         <div class="flex items-center gap-3">
-                                            <div class="w-2 h-2 bg-[#9AE064] rounded-full"></div>
+                                            <div class="w-2 h-2 bg-[#ffae1e] rounded-full"></div>
                                             <span class="text-[14px] text-[#16161A]">DeFi Features</span>
                                         </div>
                                         <div class="flex items-center gap-3">
@@ -773,6 +782,8 @@
             
             // Quarter'ı aktif etme fonksiyonu
             function activateQuarter(quarter) {
+                console.log('Activating quarter:', quarter);
+                
                 // Tüm butonlardan active class'ını kaldır
                 quarterBtns.forEach(b => b.classList.remove('active'));
                 
@@ -783,12 +794,21 @@
                 const targetBtn = document.querySelector(`.quarter-btn[data-quarter="${quarter}"]`);
                 if (targetBtn) {
                     targetBtn.classList.add('active');
+                    console.log('Button activated:', targetBtn);
                 }
                 
                 // İlgili stage kartını aktif et
                 const targetCard = document.querySelector(`.stage-card[data-quarter="${quarter}"]`);
                 if (targetCard) {
                     targetCard.classList.add('active');
+                    console.log('Card activated:', targetCard);
+                    
+                    // Stage content'i kontrol et
+                    const stageContent = targetCard.querySelector('.stage-content');
+                    if (stageContent) {
+                        console.log('Stage content found:', stageContent);
+                        console.log('Stage content classes:', stageContent.className);
+                    }
                 }
             }
             
@@ -808,7 +828,7 @@
                             '#2D5A27', // LP Locked 45% - En koyu yeşil
                             '#4A7C59', // Treasury 25% - Orta koyu yeşil
                             '#6B9A7A', // MEME Charity 15% - Orta açık yeşil
-                            '#9AE064'  // CEX Listings 15% - En açık yeşil
+                            '#ffae1e'  // CEX Listings 15% - En açık yeşil
                         ],
                         borderWidth: 0,
                         cutout: '60%'
@@ -872,148 +892,6 @@
                             ctx.fillText(value + '%', labelX, labelY + 4);
                             
                             currentAngle += sliceAngle;
-                        });
-                    }
-                }]
-            });
-
-            // Roadmap Chart
-            const roadmapCtx = document.getElementById('roadmapChart').getContext('2d');
-            new Chart(roadmapCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Q1 2025', 'Q2 2025', 'Q3 2025', 'Q4 2025', 'Q1 2026', 'Q2 2026', 'Q3 2026', 'Q4 2026', 'Q1 2027', 'Q2 2027'],
-                    datasets: [{
-                        label: 'Development Progress',
-                        data: [85, 90, 92, 95, 97, 98, 99, 100, 100, 100],
-                        borderColor: '#9AE064',
-                        backgroundColor: 'rgba(154, 224, 100, 0.1)',
-                        borderWidth: 4,
-                        fill: true,
-                        tension: 0.3,
-                        pointBackgroundColor: '#9AE064',
-                        pointBorderColor: '#ffffff',
-                        pointBorderWidth: 3,
-                        pointRadius: 6,
-                        pointHoverRadius: 10
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            backgroundColor: 'rgba(22, 22, 26, 0.9)',
-                            titleColor: '#ffffff',
-                            bodyColor: '#9AE064',
-                            borderColor: '#9AE064',
-                            borderWidth: 1,
-                            cornerRadius: 8,
-                            displayColors: false,
-                            callbacks: {
-                                title: function(context) {
-                                    return context[0].label;
-                                },
-                                label: function(context) {
-                                    return `Progress: ${context.parsed.y}%`;
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        x: {
-                            grid: {
-                                color: 'rgba(124, 124, 126, 0.2)',
-                                drawBorder: false
-                            },
-                            ticks: {
-                                color: '#7C7C7E',
-                                font: {
-                                    size: 11,
-                                    weight: '500'
-                                },
-                                maxRotation: 45
-                            }
-                        },
-                        y: {
-                            beginAtZero: true,
-                            max: 100,
-                            grid: {
-                                color: 'rgba(124, 124, 126, 0.2)',
-                                drawBorder: false
-                            },
-                            ticks: {
-                                color: '#7C7C7E',
-                                font: {
-                                    size: 12,
-                                    weight: '500'
-                                },
-                                callback: function(value) {
-                                    return value + '%';
-                                }
-                            }
-                        }
-                    },
-                    elements: {
-                        line: {
-                            borderWidth: 4
-                        },
-                        point: {
-                            hoverRadius: 10
-                        }
-                    },
-                    interaction: {
-                        intersect: false,
-                        mode: 'index'
-                    }
-                },
-                plugins: [{
-                    afterDraw: function(chart) {
-                        const ctx = chart.ctx;
-                        const chartArea = chart.chartArea;
-                        
-                        // Progress milestones with years
-                        const milestones = [
-                            { x: 0, y: 85, label: '2025', color: '#9AE064', stage: 'STAGE 3' },
-                            { x: 4, y: 97, label: '2026', color: '#4A7C59', stage: 'STAGE 4' },
-                            { x: 8, y: 100, label: '2027', color: '#2D5A27', stage: 'COMPLETE' }
-                        ];
-                        
-                        milestones.forEach((milestone, index) => {
-                            const x = chartArea.left + (milestone.x / (chart.data.labels.length - 1)) * (chartArea.right - chartArea.left);
-                            const y = chartArea.top + ((100 - milestone.y) / 100) * (chartArea.bottom - chartArea.top);
-                            
-                            // Draw milestone line
-                            ctx.strokeStyle = milestone.color;
-                            ctx.lineWidth = 2;
-                            ctx.setLineDash([5, 5]);
-                            ctx.beginPath();
-                            ctx.moveTo(x, chartArea.top);
-                            ctx.lineTo(x, y);
-                            ctx.stroke();
-                            ctx.setLineDash([]);
-                            
-                            // Draw milestone label background
-                            ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
-                            ctx.strokeStyle = milestone.color;
-                            ctx.lineWidth = 2;
-                            ctx.beginPath();
-                            ctx.roundRect(x - 35, y - 30, 70, 60, 8);
-                            ctx.fill();
-                            ctx.stroke();
-                            
-                            // Draw milestone label text
-                            ctx.fillStyle = milestone.color;
-                            ctx.font = 'bold 14px Arial';
-                            ctx.textAlign = 'center';
-                            ctx.fillText(milestone.label, x, y - 10);
-                            
-                            ctx.fillStyle = '#7C7C7E';
-                            ctx.font = '10px Arial';
-                            ctx.fillText(milestone.stage, x, y + 5);
                         });
                     }
                 }]

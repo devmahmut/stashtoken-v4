@@ -1684,8 +1684,8 @@ body {
   --tw-border-opacity: 1;
   border-color: rgb(104 104 104 / var(--tw-border-opacity, 1));
 }
-.border-\[\#9AE064\]\/20 {
-  border-color: rgb(154 224 100/0.2);
+.border-\[\#ffae1e\]\/20 {
+  border-color: rgb(255 174 30/0.2);
 }
 .border-\[\#9DA4AE\]\/50 {
   border-color: rgb(157 164 174/0.5);
@@ -1710,7 +1710,7 @@ body {
 }
 .border-arcGreen {
   --tw-border-opacity: 1;
-  border-color: rgb(154 224 100 / var(--tw-border-opacity, 1));
+  border-color: rgb(255 174 30 / var(--tw-border-opacity, 1));
 }
 .border-black {
   --tw-border-opacity: 1;
@@ -1860,15 +1860,15 @@ body {
   --tw-bg-opacity: 1;
   background-color: rgb(74 74 82 / var(--tw-bg-opacity, 1));
 }
-.bg-\[\#9AE064\] {
+.bg-\[\#ffae1e\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(154 224 100 / var(--tw-bg-opacity, 1));
+  background-color: rgb(255 174 30 / var(--tw-bg-opacity, 1));
 }
-.bg-\[\#9AE064\]\/40 {
-  background-color: rgb(154 224 100/0.4);
+.bg-\[\#ffae1e\]\/40 {
+  background-color: rgb(255 174 30/0.4);
 }
-.bg-\[\#9AE064\]\/5 {
-  background-color: rgb(154 224 100/0.05);
+.bg-\[\#ffae1e\]\/5 {
+  background-color: rgb(255 174 30/0.05);
 }
 .bg-\[\#D4D4D4\] {
   --tw-bg-opacity: 1;
@@ -1900,7 +1900,7 @@ body {
 }
 .bg-arcGreen {
   --tw-bg-opacity: 1;
-  background-color: rgb(154 224 100 / var(--tw-bg-opacity, 1));
+  background-color: rgb(255 174 30 / var(--tw-bg-opacity, 1));
 }
 .bg-background {
   background-color: hsl(var(--background));
@@ -2396,9 +2396,9 @@ body {
   --tw-text-opacity: 1;
   color: rgb(153 153 153 / var(--tw-text-opacity, 1));
 }
-.text-\[\#9AE064\] {
+.text-\[\#ffae1e\] {
   --tw-text-opacity: 1;
-  color: rgb(154 224 100 / var(--tw-text-opacity, 1));
+  color: rgb(255 174 30 / var(--tw-text-opacity, 1));
 }
 .text-\[\#A1A8B1\] {
   --tw-text-opacity: 1;
@@ -2453,7 +2453,7 @@ body {
 }
 .text-arcGreen {
   --tw-text-opacity: 1;
-  color: rgb(154 224 100 / var(--tw-text-opacity, 1));
+  color: rgb(255 174 30 / var(--tw-text-opacity, 1));
 }
 .text-black {
   --tw-text-opacity: 1;
@@ -2586,7 +2586,7 @@ body {
   color: rgb(173 173 173 / var(--tw-placeholder-opacity, 1));
 }
 .accent-arcGreen {
-  accent-color: #9ae064;
+  accent-color: #ffae1e;
 }
 .opacity-0 {
   opacity: 0;
@@ -2893,7 +2893,7 @@ html {
     fill: #ffffff;
   }
   50% {
-    fill: #9ae064;
+    fill: #ffae1e;
   }
   to {
     fill: #ffffff;
@@ -2911,7 +2911,7 @@ html {
 }
 button.dropdown-open .ryzome-logo-path,
 button:hover .ryzome-logo-path {
-  fill: #9ae064;
+  fill: #ffae1e;
 }
 .react-flow__edge.selected,
 .react-flow__edge:hover {
@@ -2957,11 +2957,11 @@ button:hover .ryzome-logo-path {
 }
 .checked\:border-arcGreen:checked {
   --tw-border-opacity: 1;
-  border-color: rgb(154 224 100 / var(--tw-border-opacity, 1));
+  border-color: rgb(255 174 30 / var(--tw-border-opacity, 1));
 }
 .checked\:bg-arcGreen:checked {
   --tw-bg-opacity: 1;
-  background-color: rgb(154 224 100 / var(--tw-bg-opacity, 1));
+  background-color: rgb(255 174 30 / var(--tw-bg-opacity, 1));
 }
 .hover\:scale-105:hover {
   --tw-scale-x: 1.05;
@@ -2990,7 +2990,7 @@ button:hover .ryzome-logo-path {
 }
 .hover\:border-arcGreen:hover {
   --tw-border-opacity: 1;
-  border-color: rgb(154 224 100 / var(--tw-border-opacity, 1));
+  border-color: rgb(255 174 30 / var(--tw-border-opacity, 1));
 }
 .hover\:border-white:hover {
   --tw-border-opacity: 1;
@@ -3046,11 +3046,11 @@ button:hover .ryzome-logo-path {
 .hover\:bg-\[\#4F5257\]\/30:hover {
   background-color: rgb(79 82 87/0.3);
 }
-.hover\:bg-\[\#9AE064\]\/60:hover {
-  background-color: rgb(154 224 100/0.6);
+.hover\:bg-\[\#ffae1e\]\/60:hover {
+  background-color: rgb(255 174 30/0.6);
 }
-.hover\:bg-\[\#9AE064\]\/90:hover {
-  background-color: rgb(154 224 100/0.9);
+.hover\:bg-\[\#ffae1e\]\/90:hover {
+  background-color: rgb(255 174 30/0.9);
 }
 .hover\:bg-\[\#F5F5F5\]:hover {
   --tw-bg-opacity: 1;
@@ -3060,13 +3060,13 @@ button:hover .ryzome-logo-path {
   background-color: hsl(var(--accent));
 }
 .hover\:bg-arcGreen\/10:hover {
-  background-color: rgb(154 224 100/0.1);
+  background-color: rgb(255 174 30/0.1);
 }
 .hover\:bg-arcGreen\/70:hover {
-  background-color: rgb(154 224 100/0.7);
+  background-color: rgb(255 174 30/0.7);
 }
 .hover\:bg-arcGreen\/90:hover {
-  background-color: rgb(154 224 100/0.9);
+  background-color: rgb(255 174 30/0.9);
 }
 .hover\:bg-background:hover {
   background-color: hsl(var(--background));
@@ -3115,7 +3115,7 @@ button:hover .ryzome-logo-path {
   color: hsl(var(--accent-foreground));
 }
 .hover\:text-arcGreen\/80:hover {
-  color: rgb(154 224 100/0.8);
+  color: rgb(255 174 30/0.8);
 }
 .hover\:text-black:hover {
   --tw-text-opacity: 1;
@@ -3440,11 +3440,11 @@ button:hover .ryzome-logo-path {
 }
 .data-\[state\=checked\]\:border-arcGreen[data-state="checked"] {
   --tw-border-opacity: 1;
-  border-color: rgb(154 224 100 / var(--tw-border-opacity, 1));
+  border-color: rgb(255 174 30 / var(--tw-border-opacity, 1));
 }
 .data-\[state\=checked\]\:bg-arcGreen[data-state="checked"] {
   --tw-bg-opacity: 1;
-  background-color: rgb(154 224 100 / var(--tw-bg-opacity, 1));
+  background-color: rgb(255 174 30 / var(--tw-bg-opacity, 1));
 }
 .data-\[state\=checked\]\:bg-primary[data-state="checked"] {
   background-color: hsl(var(--primary));
@@ -3582,7 +3582,7 @@ button:hover .ryzome-logo-path {
 }
 .dark\:border-arcGreen:is(.dark *) {
   --tw-border-opacity: 1;
-  border-color: rgb(154 224 100 / var(--tw-border-opacity, 1));
+  border-color: rgb(255 174 30 / var(--tw-border-opacity, 1));
 }
 .dark\:border-destructive:is(.dark *) {
   border-color: hsl(var(--destructive));
@@ -3607,7 +3607,7 @@ button:hover .ryzome-logo-path {
   background-color: rgb(26 26 26 / var(--tw-bg-opacity, 1));
 }
 .dark\:bg-arcGreen\/90:is(.dark *) {
-  background-color: rgb(154 224 100/0.9);
+  background-color: rgb(255 174 30/0.9);
 }
 .dark\:bg-black:is(.dark *) {
   --tw-bg-opacity: 1;
@@ -3624,8 +3624,8 @@ button:hover .ryzome-logo-path {
   --tw-bg-opacity: 1;
   background-color: rgb(24 24 27 / var(--tw-bg-opacity, 1));
 }
-.dark\:fill-\[\#9AE064\]:is(.dark *) {
-  fill: #9ae064;
+.dark\:fill-\[\#ffae1e\]:is(.dark *) {
+  fill: #ffae1e;
 }
 .dark\:text-\[\#7F7F7F\]:is(.dark *) {
   --tw-text-opacity: 1;
@@ -3637,7 +3637,7 @@ button:hover .ryzome-logo-path {
 }
 .dark\:text-arcGreen:is(.dark *) {
   --tw-text-opacity: 1;
-  color: rgb(154 224 100 / var(--tw-text-opacity, 1));
+  color: rgb(255 174 30 / var(--tw-text-opacity, 1));
 }
 .dark\:text-blue-400:is(.dark *) {
   --tw-text-opacity: 1;
@@ -3668,7 +3668,7 @@ button:hover .ryzome-logo-path {
   background-color: rgb(17 17 17 / var(--tw-bg-opacity, 1));
 }
 .dark\:hover\:bg-arcGreen\/20:hover:is(.dark *) {
-  background-color: rgb(154 224 100/0.2);
+  background-color: rgb(255 174 30/0.2);
 }
 .dark\:hover\:bg-black\/20:hover:is(.dark *) {
   background-color: rgb(0 0 0/0.2);
@@ -4167,4 +4167,92 @@ html.dark
 }
 .wmde-markdown li {
   margin: 0.25em 0 !important;
+}
+
+/* Roadmap Button Styles */
+.quarter-btn {
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  z-index: 20;
+}
+
+.quarter-btn:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 8px rgba(255, 174, 30, 0.6));
+}
+
+/* Roadmap container positioning */
+.quarter-btn {
+  z-index: 10;
+}
+
+.quarter-btn-1 {
+    left: 35.0%; /* 346 / 988.5 * 100 = 35.0% - clip-path merkezi */
+    top: 65.3%; /* 277 / 424.5 * 100 = 65.3% - clip-path merkezi */
+}
+
+.quarter-btn-2 {
+    left: 62.0%; /* 612 / 988.5 * 100 = 62.0% - clip-path merkezi */
+    top: 76.4%; /* 324 / 424.5 * 100 = 76.4% - clip-path merkezi */
+}
+
+.quarter-btn-3 {
+    left: 88.4%; /* 873 / 988.5 * 100 = 88.4% - clip-path merkezi */
+    top: 45.7%; /* 194 / 424.5 * 100 = 45.7% - clip-path merkezi */
+}
+
+.quarter-btn-4 {
+    left: 68.0%; /* 672 / 988.5 * 100 = 68.0% - clip-path merkezi */
+    top: 21.0%; /* 89 / 424.5 * 100 = 21.0% - clip-path merkezi */
+}
+
+/* Tailwind utility classes */
+.mb-16 {
+  margin-bottom: 4rem; /* 64px */
+}
+
+.h-32 {
+  height: 8rem; /* 128px */
+}
+
+.mt-8 {
+  margin-top: 2rem; /* 32px */
+}
+
+/* Roadmap Functionality Styles */
+.stage-content {
+  max-height: 0 !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+  transform: translateY(-10px) !important;
+  transition: all 0.4s ease !important;
+}
+
+.stage-card.active .stage-content {
+  max-height: 500px !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Stage kartları için hover efekti */
+.stage-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Active stage kartı için özel stil */
+.stage-card.active {
+  border-color: #ffae1e !important;
+  box-shadow: 0 10px 25px rgba(154, 224, 100, 0.2);
+}
+
+/* Q button'ları için active state */
+.quarter-btn.active svg {
+  opacity: 1 !important;
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px rgba(255, 174, 30, 0.8));
+}
+
+/* Quarter button cursor */
+.quarter-btn {
+  cursor: pointer;
 }

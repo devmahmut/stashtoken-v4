@@ -53,7 +53,7 @@ stashtoken_v4/
 
 ### Renkler
 - Ana renk: `#012212` (koyu yeşil)
-- Accent renk: `#9AE064` (açık yeşil)
+- Accent renk: `#ffae1e` (açık yeşil)
 - Gri tonları CSS dosyalarında tanımlı
 
 ### Fontlar
