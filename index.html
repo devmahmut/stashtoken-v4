@@ -53,6 +53,191 @@
         @-webkit-keyframes nprogress-spinner{0%{-webkit-transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg)}}
         @keyframes nprogress-spinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
         
+        /* Section Animasyonları */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .animate-on-scroll.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Hero Section Özel Animasyonları */
+        .hero-animate {
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hero-animate.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hero-animate.delay-100 {
+            transition-delay: 0.1s;
+        }
+        
+        .hero-animate.delay-200 {
+            transition-delay: 0.2s;
+        }
+        
+        .hero-animate.delay-300 {
+            transition-delay: 0.3s;
+        }
+        
+        .hero-animate.delay-400 {
+            transition-delay: 0.4s;
+        }
+        
+        .hero-animate.delay-500 {
+            transition-delay: 0.5s;
+        }
+        
+        /* Fade In Animasyonu */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .fade-in.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Slide In Left Animasyonu */
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .slide-in-left.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Slide In Right Animasyonu */
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .slide-in-right.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Scale In Animasyonu */
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .scale-in.animate-in {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* Hero Background Özel Animasyonu */
+        .hero-background {
+            opacity: 0;
+            transform: scale(1.1) translateY(20px);
+            transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: blur(2px);
+        }
+        
+        .hero-background.animate-in {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            filter: blur(0px);
+        }
+        
+        /* Stagger Animasyonları */
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .stagger-item.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stagger-item:nth-child(1) { transition-delay: 0.1s; }
+        .stagger-item:nth-child(2) { transition-delay: 0.2s; }
+        .stagger-item:nth-child(3) { transition-delay: 0.3s; }
+        .stagger-item:nth-child(4) { transition-delay: 0.4s; }
+        
+        /* Hover Efektleri */
+        .stagger-item:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Animasyon Performans Optimizasyonu */
+        .animate-on-scroll,
+        .fade-in,
+        .slide-in-left,
+        .slide-in-right,
+        .scale-in,
+        .stagger-item,
+        .hero-animate {
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+        }
+        
+        /* Bounce Animasyonu */
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3) translateY(100px);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05) translateY(-10px);
+            }
+            70% {
+                transform: scale(0.9) translateY(0);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        .bounce-in {
+            animation: bounceIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        /* Fade In Up Animasyonu */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
         /* FAQ Styles */
         .faq-content {
             max-height: 0 !important;
@@ -139,19 +324,19 @@
     <div class="relative min-h-screen bg-white font-mona text-[#012212]">
         <!-- Hero Background -->
         <img alt="stashtoken tree background" loading="lazy" width="1440" height="1507" 
-             class="absolute left-0 top-0 z-0 h-auto max-h-[1507px] w-full" 
-             style="color:transparent" src="assets/images/hero-background.svg"/>
+             class="hero-background absolute left-0 top-0 z-0 h-auto max-h-[1507px] w-full" 
+             style="color:transparent; object-fit: cover; height: 100%;" src="assets/images/hero-background.svg"/>
         
         <!-- Navigation -->
         <nav class="fixed left-0 right-0 top-0 z-50 transition-transform duration-300 translate-y-0">
             <div class="flex w-full flex-col items-center justify-center px-4 md:px-8">
                 <div class="flex h-[86px] w-full max-w-[1376px] items-center justify-between gap-x-4 bg-transparent md:h-[128px]">
-                    <div class="flex h-[50px] w-auto items-center justify-between rounded-lg bg-[#E2E2E2] px-4 md:h-[64px]">
+                    <div class="slide-in-left flex h-[50px] w-auto items-center justify-between rounded-lg bg-[#E2E2E2] px-4 md:h-[64px]">
                         <img alt="stashtoken logo" loading="lazy" width="133" height="30" 
                              style="color:transparent; width: auto; height: 200px;" 
                              src="assets/images/logo.svg"/>
                     </div>
-                    <div class="flex items-center justify-center gap-x-6 rounded-lg bg-[#E2E2E2] px-0 md:h-[64px] md:w-fit md:px-4">
+                    <div class="slide-in-right flex items-center justify-center gap-x-6 rounded-lg bg-[#E2E2E2] px-0 md:h-[64px] md:w-fit md:px-4">
                             <button class="p-2">
                                 Go to StashOffer
                             </button>
@@ -163,22 +348,22 @@
         <!-- Hero Section -->
         <div class="relative w-full pt-[calc(108px_+_54px)] md:pt-[calc(108px_+_92px)]">
             <div class="relative flex h-full flex-col items-center justify-center">
-                <div class="mb-6 flex h-8 w-[412px] items-center rounded-lg bg-arcGreen px-3 text-[14px]">
+                <div class="hero-animate delay-100 mb-6 flex h-8 w-[412px] items-center rounded-lg bg-arcGreen px-3 text-[14px]">
                                          <div class="rounded-md h-4 w-full justify-center items-center flex">
                          <span>🚀 StashToken Mainnet is Live!
                              Start earning rewards</span>
                      </div>
                 </div>
-                <span>Stake. Earn. Compound.</span>
+                <span class="hero-animate delay-200">Stake. Earn. Compound.</span>
                 <div class="flex flex-col items-center px-4 pt-6 text-center">
-                    <div class="flex flex-col text-[42px] font-medium leading-none md:text-[80px]">
+                    <div class="hero-animate delay-300 flex flex-col text-[42px] font-medium leading-none md:text-[80px]">
                         <span>Your crypto,</span>
                         <span>maximized.</span>
                     </div>
-                    <span class="mt-4 w-full text-[16px] md:w-[65%] md:text-[18px]">
+                    <span class="hero-animate delay-400 mt-4 w-full text-[16px] md:w-[65%] md:text-[18px]">
                         Advanced staking protocol. Automated yield optimization. Where your assets work harder with intelligent DeFi strategies.
                     </span>
-                    <div class="mt-8 flex items-center gap-x-3">
+                    <div class="hero-animate delay-500 mt-8 flex items-center gap-x-3">
                         <div class="flex h-10 items-center justify-center rounded-lg border border-[#012212] bg-[#012212] px-4 text-[18px] text-white transition-colors duration-500 hover:bg-transparent hover:text-[#012212] cursor-pointer">
                             Start Staking
                         </div>
@@ -196,7 +381,7 @@
         <!-- Video Section -->
         <div class="flex w-full justify-center pt-[56px]">
             <div class="flex w-full items-center justify-center px-4 md:px-8">
-                <div class="w-full max-w-[1372px] overflow-hidden rounded-xl">
+                <div class="scale-in w-full max-w-[1372px] overflow-hidden rounded-xl">
                     <div class="relative aspect-[2040/1080]">
                         <video src="assets/images/demo-video.webm" autoplay loop muted playsinline 
                                class="absolute left-0 top-0 h-full w-full object-cover"></video>
@@ -207,8 +392,8 @@
 
         <!-- About Section -->
         <div class="flex w-full items-center justify-center px-4 md:px-8">
-            <div class="relative z-10 flex w-full max-w-[1372px] flex-col bg-white py-[124px]">
-                <div class="mb-[64px] flex w-full flex-col gap-y-4 md:mb-[190px]">
+            <div class="relative z-10 flex w-full max-w-[1372px] flex-col bg-white" style="margin-top: 172px;">
+                <div class="animate-on-scroll mb-[64px] flex w-full flex-col gap-y-4 md:mb-[190px]">
                     <span class="text-[16px]">About StashToken</span>
                     <div class="flex w-full flex-col justify-between gap-x-4 gap-y-4 md:flex-row">
                         <span class="flex text-[32px]">How StashToken Works</span>
@@ -219,13 +404,13 @@
                 </div>
                 
                 <div class="flex w-full flex-col items-start justify-between gap-x-12 gap-y-8 xl:flex-row">
-                    <div class="w-full xl:flex-1">
+                    <div class="slide-in-left w-full xl:flex-1">
                         <img alt="How to use StashToken" loading="lazy" width="1024" height="654" 
                              class="h-auto w-full" style="color:transparent" 
                              src="assets/images/product-demo.webp"/>
                     </div>
-                    <div class="flex w-full flex-col gap-8 xl:w-[300px]">
-                        <div class="flex w-full flex-col">
+                    <div class="slide-in-right flex w-full flex-col gap-8 xl:w-[300px]">
+                        <div class="stagger-item flex w-full flex-col">
                             <div class="order-1 mb-8 mt-2 flex flex-col gap-y-1 md:order-2 md:mb-0">
                                 <div class="mb-4 flex h-[1px] w-8 bg-[#161616]"></div>
                                 <span class="text-[24px]">Connect Your Wallet</span>
@@ -234,7 +419,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="flex w-full flex-col">
+                        <div class="stagger-item flex w-full flex-col">
                             <div class="order-1 mb-8 mt-8 flex flex-col gap-y-1 md:order-2 md:mb-0">
                                 <div class="mb-4 flex h-[1px] w-8 bg-[#161616]"></div>
                                 <span class="text-[24px]">Choose Your Strategy</span>
@@ -243,7 +428,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="flex w-full flex-col">
+                        <div class="stagger-item flex w-full flex-col">
                             <div class="order-1 mb-8 mt-8 flex flex-col gap-y-1 md:order-2 md:mb-0">
                                 <div class="mb-4 flex h-[1px] w-8 bg-[#161616]"></div>
                                 <span class="text-[24px]">Maximize with DeFi</span>
@@ -258,9 +443,9 @@
         </div>
 
         <!-- Tokenomics Section -->
-        <div class="flex w-full items-center justify-center px-4 md:px-8">
-            <div class="flex w-full max-w-[1376px] flex-col bg-white py-8 md:py-[124px]">
-                <div class="mb-[64px] flex w-full flex-col gap-y-4 md:mb-[190px]">
+        <div class="flex w-full items-center justify-center px-4 md:px-8 min-h-screen">
+            <div class="flex w-full max-w-[1376px] flex-col bg-white py-8 md:py-[124px] justify-center">
+                <div class="animate-on-scroll mb-[64px] flex w-full flex-col gap-y-4">
                     <span class="text-[16px]">Tokenomics</span>
                     <div class="flex w-full flex-col justify-between gap-y-4 md:flex-row">
                         <span class="flex text-[32px]">Token Distribution</span>
@@ -270,10 +455,10 @@
                     </div>
                 </div>
                 
-                                <div class="flex w-full flex-col gap-x-8 gap-y-[64px] md:flex-row">
-                    <div class="order-2 flex w-full flex-col md:order-1 md:w-1/2">
+                                <div class="flex w-full flex-col gap-x-8 gap-y-[64px] md:flex-row items-center">
+                    <div class="slide-in-left order-2 flex w-full flex-col md:order-1 md:w-1/2">
                         <div class="grid grid-cols-2 gap-8">
-                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8">
+                            <div class="stagger-item flex h-auto items-end border border-[#16161A] rounded-lg p-6 md:h-[200px] md:px-8 tokenomics-card">
                                 <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
                                         <path d="M128,56A72,72,0,0,0,56,128c0,39.7,32.3,72,72,72s72-32.3,72-72S167.7,56,128,56Zm0,128a56,56,0,1,1,56-56A56.06,56.06,0,0,1,128,128Zm0-96a40,40,0,1,0,40,40A40,40,0,0,0,128,32Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,96Z"></path>
@@ -287,7 +472,7 @@
                                 </div>
                             </div>
                             
-                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8">
+                            <div class="stagger-item flex h-auto items-end border border-[#16161A] rounded-lg p-6 md:h-[200px] md:px-8 tokenomics-card">
                                 <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
                                         <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V72H40ZM216,200H40V88H216V200Zm-16-64a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,136Zm0,32a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,168ZM80,136a16,16,0,1,1-16-16A16,16,0,0,1,80,136Zm0,32a16,16,0,1,1-16-16A16,16,0,0,1,80,72Z"></path>
@@ -301,7 +486,7 @@
                                 </div>
                             </div>
                             
-                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8">
+                            <div class="stagger-item flex h-auto items-end border border-[#16161A] rounded-lg p-6 md:h-[200px] md:px-8 tokenomics-card">
                                 <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
                                         <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48-88a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"></path>
@@ -315,16 +500,15 @@
                                 </div>
                             </div>
                             
-                            <div class="flex h-auto items-end border-t border-[#16161A] px-0 md:h-[200px] md:border-l md:border-t-0 md:px-8">
+                            <div class="stagger-item flex h-auto items-end border border-[#16161A] rounded-lg p-6 md:h-[200px] md:px-8 tokenomics-card">
                                 <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
-                                        <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V72H40ZM216,200H40V88H216V200Zm-16-64a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,136Zm0,32a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,168ZM80,136a16,16,0,1,1-16-16A16,16,0,0,1,80,136Zm0,32a16,16,0,1,1-16-16A16,16,0,0,1,80,72Z"></path>
+                                        <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V72H40ZM216,200H40V88H216V200Zm-16-64a8,8,0,0,1-1,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,136Zm0,32a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,168ZM80,136a16,16,0,1,1-16-16A16,16,0,0,1,80,136Zm0,32a16,16,0,1,1-16-16A16,16,0,0,1,80,72Z"></path>
                                     </svg>
                                     <div class="font-regular flex flex-col">
                                         <span class="text-[24px]">CEX Listings</span>
                                         <span class="text-[16px] text-[#16161A]">
                                             15% - Exchange liquidity
-                                        </span>
                                         </span>
                                     </div>
                                 </div>
@@ -332,10 +516,10 @@
                         </div>
                     </div>
                     
-                    <div class="order-1 flex w-full flex-col md:order-2 md:w-1/2">
-                        <div class="flex h-auto items-center justify-center md:h-[300px]">
-                            <div class="relative w-80 h-80">
-                                <canvas id="tokenomicsChart" width="320" height="320"></canvas>
+                    <div class="slide-in-right order-1 flex w-full flex-col md:order-2 md:w-1/2">
+                        <div class="flex h-auto items-center justify-end md:h-[400px]">
+                            <div class="relative w-full h-full flex justify-end">
+                                <canvas id="tokenomicsChart" width="400" height="400" class="w-full h-full max-w-[500px] tokenomics-chart"></canvas>
                             </div>
                         </div>
                     </div>
@@ -350,7 +534,7 @@
             <!-- Roadmap Background -->
             <img src="assets/images/rm-bg.svg" alt="Roadmap Background" class="absolute inset-0 w-full h-full object-contain md:object-cover">
             <div class="flex w-full max-w-[1376px] flex-col py-4 md:py-8 lg:py-[124px] relative z-10 px-4">
-                <div class="mb-[64px] flex w-full flex-col gap-y-4">
+                <div class="animate-on-scroll mb-[64px] flex w-full flex-col gap-y-4">
                     <span class="text-[16px]">Roadmap</span>
                     <div class="flex w-full flex-col justify-between gap-y-4 md:flex-row">
                         <span class="flex text-[32px]">Development Journey</span>
@@ -396,7 +580,7 @@
                     <!-- Stage Kartları -->
                     <div class="flex flex-col md:flex-row gap-4 md:gap-8 w-full justify-between mt-8">
                         <!-- Q1 Kartı -->
-                        <div class="stage-card w-full md:w-1/4" data-quarter="q1">
+                        <div class="stagger-item stage-card w-full md:w-1/4" data-quarter="q1">
                             <div class="bg-white border-2 border-[#ffae1e] rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="w-3 h-3 bg-[#ffae1e] rounded-full"></div>
@@ -423,7 +607,7 @@
                         </div>
                         
                         <!-- Q2 Kartı -->
-                        <div class="stage-card w-full md:w-1/4" data-quarter="q2">
+                        <div class="stagger-item stage-card w-full md:w-1/4" data-quarter="q2">
                             <div class="bg-white border-2 border-[#4A7C59] rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="w-3 h-3 bg-[#ffae1e] rounded-full"></div>
@@ -450,7 +634,7 @@
                         </div>
                         
                         <!-- Q3 Kartı -->
-                        <div class="stage-card w-full md:w-1/4" data-quarter="q3">
+                        <div class="stagger-item stage-card w-full md:w-1/4" data-quarter="q3">
                             <div class="bg-white border-2 border-[#2D5A27] rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="w-3 h-3 bg-[#ffae1e] rounded-full"></div>
@@ -477,7 +661,7 @@
                         </div>
                         
                         <!-- Q4 Kartı -->
-                        <div class="stage-card w-full md:w-1/4" data-quarter="q4">
+                        <div class="stagger-item stage-card w-full md:w-1/4" data-quarter="q4">
                             <div class="bg-white border-2 border-[#6B9A7A] rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="w-3 h-3 bg-[#ffae1e] rounded-full"></div>
@@ -510,7 +694,7 @@
       
         <!-- CTA Section -->
         <div class="flex w-full items-center justify-center px-4 py-8 md:px-8 md:py-[56px]">
-            <div class="flex w-full max-w-[1376px] flex-col items-center justify-center rounded-lg bg-arcGreen bg-[url('assets/images/cta-background.webp')] bg-cover bg-center p-8">
+            <div class="fade-in flex w-full max-w-[1376px] flex-col items-center justify-center rounded-lg bg-cover bg-center p-8" style="background-image: url('assets/images/getstarted.svg');">
                 <span class="mb-4 text-[#16161A]">Your second wallet, now with intelligence.</span>
                 <div class="mb-6 flex flex-col text-center text-[56px] font-medium leading-none text-[#16161A] md:mb-[60px]">
                     <div class="hidden flex-col md:flex">
@@ -536,12 +720,12 @@
       >
         <div class="flex w-full items-center justify-center px-4 md:px-8">
           <div class="flex w-full max-w-[1376px] flex-col gap-y-4">
-            <span class="text-[16px]">Curious mind asks</span>
+            <span class="animate-on-scroll text-[16px]">Curious mind asks</span>
             <div
               class="flex w-full flex-col justify-between gap-x-8 gap-y-[64px] md:flex-row"
             >
-              <span class="flex text-[32px]">FAQ</span>
-              <div class="flex w-full max-w-[906px] flex-col gap-y-6">
+              <span class="animate-on-scroll flex text-[32px]">FAQ</span>
+              <div class="fade-in flex w-full max-w-[906px] flex-col gap-y-6">
                 <div
                   class="flex w-full flex-col gap-y-5"
                   data-orientation="vertical"
@@ -684,20 +868,20 @@
         <!-- Footer Logo -->
         <div class="flex w-full items-center justify-center px-4 md:px-8">
             <img alt="footer graphic" loading="lazy" width="1440" height="200" 
-                 class="mb-8 h-auto w-full max-w-[1376px] md:mb-[108px]" 
+                 class="fade-in mb-8 h-auto w-full max-w-[1376px] md:mb-[108px]" 
                  style="color:transparent;object-fit:contain" src="assets/images/footer-graphic.svg"/>
         </div>
 
         <!-- Footer -->
         <div class="flex w-full items-center justify-center px-8">
-            <div class="flex w-full max-w-[1372px] items-center justify-between bg-white pb-[56px]">
+            <div class="fade-in flex w-full max-w-[1372px] items-center justify-between bg-white pb-[56px]">
                 <div class="flex w-full justify-between">
-                    <div class="w-full md:w-auto">
+                    <div class="slide-in-left w-full md:w-auto">
                         <img alt="stashtoken logo" loading="lazy" width="133" height="30" 
                              style="color:transparent; width: auto; height: 200px;" 
                              src="assets/images/logo.svg"/>
                     </div>
-                    <div class="flex items-center justify-center gap-x-2">
+                    <div class="slide-in-right flex items-center justify-center gap-x-2">
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="scale-[1.75] cursor-pointer rounded px-2 hover:bg-[#303037]/50">
                                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -716,7 +900,7 @@
                             </svg>
                         </div>
                         <div>
-                            <svg class="h-6 w-6 scale-[1.75] cursor-pointer rounded px-2 hover:bg-[#303037]/50" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <svg class="h-6 w-6 scale-[1.75] cursor-pointer rounded px-2 hover:btn-2 hover:bg-[#303037]/50" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"></path>
                             </svg>
                         </div>
@@ -729,6 +913,65 @@
     <!-- FAQ JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Scroll-triggered Animasyonlar
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        
+                        // Stagger animasyonları için özel kontrol
+                        if (entry.target.classList.contains('stagger-item')) {
+                            const parent = entry.target.parentElement;
+                            if (parent) {
+                                const siblings = parent.querySelectorAll('.stagger-item');
+                                siblings.forEach((sibling, index) => {
+                                    setTimeout(() => {
+                                        sibling.classList.add('animate-in');
+                                    }, index * 100);
+                                });
+                            }
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            // Tüm animasyon elementlerini gözlemle
+            const animatedElements = document.querySelectorAll('.animate-on-scroll, .fade-in, .slide-in-left, .slide-in-right, .scale-in, .stagger-item');
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Sayfa yüklendiğinde tüm animasyonları başlat
+            window.addEventListener('load', () => {
+                // Hero section animasyonları
+                const heroElements = document.querySelectorAll('.hero-animate');
+                heroElements.forEach((element, index) => {
+                    setTimeout(() => {
+                        element.classList.add('animate-in');
+                    }, index * 100);
+                });
+                
+                // Navigation animasyonları
+                const navElements = document.querySelectorAll('.slide-in-left, .slide-in-right');
+                navElements.forEach((element, index) => {
+                    setTimeout(() => {
+                        element.classList.add('animate-in');
+                    }, 200 + (index * 100));
+                });
+                
+                // Hero background animasyonu
+                setTimeout(() => {
+                    const heroBg = document.querySelector('.hero-background');
+                    if (heroBg) {
+                        heroBg.classList.add('animate-in');
+                    }
+                }, 500);
+            });
             const faqButtons = document.querySelectorAll('.faq-button');
             
             faqButtons.forEach(button => {
@@ -818,20 +1061,23 @@
             
             // Tokenomics Chart
             const ctx = document.getElementById('tokenomicsChart').getContext('2d');
-            new Chart(ctx, {
+            const tokenomicsChart = new Chart(ctx, {
                 type: 'doughnut',
                 data: {
                     labels: ['LP Locked', 'Treasury', 'MEME Charity', 'CEX Listings'],
                     datasets: [{
                         data: [45, 25, 15, 15],
                         backgroundColor: [
-                            '#2D5A27', // LP Locked 45% - En koyu yeşil
-                            '#4A7C59', // Treasury 25% - Orta koyu yeşil
-                            '#6B9A7A', // MEME Charity 15% - Orta açık yeşil
-                            '#ffae1e'  // CEX Listings 15% - En açık yeşil
+                            '#ff8c00', // LP Locked 45% - Koyu turuncu
+                            '#ffa500', // Treasury 25% - Turuncu
+                            '#ffb84d', // MEME Charity 15% - Açık turuncu
+                            '#ffae1e'  // CEX Listings 15% - Altın sarısı
                         ],
                         borderWidth: 0,
-                        cutout: '60%'
+                        cutout: '60%',
+                        hoverOffset: 15,
+                        hoverBorderWidth: 3,
+                        hoverBorderColor: '#ffffff'
                     }]
                 },
                 options: {
@@ -842,7 +1088,21 @@
                             display: false
                         },
                         tooltip: {
-                            enabled: false
+                            enabled: true,
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            titleColor: '#ffffff',
+                            bodyColor: '#ffffff',
+                            borderColor: '#ffae1e',
+                            borderWidth: 2,
+                            cornerRadius: 8,
+                            displayColors: true,
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.label || '';
+                                    const value = context.parsed;
+                                    return `${label}: ${value}%`;
+                                }
+                            }
                         }
                     },
                     elements: {
@@ -850,6 +1110,16 @@
                             borderWidth: 2,
                             borderColor: '#ffffff'
                         }
+                    },
+                    interaction: {
+                        intersect: false,
+                        mode: 'nearest'
+                    },
+                    animation: {
+                        animateRotate: true,
+                        animateScale: true,
+                        duration: 1000,
+                        easing: 'easeOutQuart'
                     }
                 },
                 plugins: [{
@@ -858,17 +1128,21 @@
                         const centerX = chart.chartArea.left + (chart.chartArea.right - chart.chartArea.left) / 2;
                         const centerY = chart.chartArea.top + (chart.chartArea.bottom - chart.chartArea.top) / 2;
                         
-                        // Center text
-                        ctx.fillStyle = '#16161A';
-                        ctx.font = 'bold 24px Arial';
+                        // Center text with gradient effect
+                        const gradient = ctx.createLinearGradient(centerX - 50, centerY - 20, centerX + 50, centerY + 20);
+                        gradient.addColorStop(0, '#ffae1e');
+                        gradient.addColorStop(1, '#ff8c00');
+                        
+                        ctx.fillStyle = gradient;
+                        ctx.font = 'bold 28px Mona Sans, Arial';
                         ctx.textAlign = 'center';
                         ctx.fillText('100M', centerX, centerY - 10);
                         
-                        ctx.font = '14px Arial';
+                        ctx.font = '16px Mona Sans, Arial';
                         ctx.fillStyle = '#7C7C7E';
                         ctx.fillText('Total Supply', centerX, centerY + 15);
                         
-                        // Percentage labels
+                        // Percentage labels with improved styling
                         const radius = (chart.chartArea.right - chart.chartArea.left) / 2 * 0.6;
                         const data = chart.data.datasets[0].data;
                         let currentAngle = -Math.PI / 2;
@@ -876,25 +1150,91 @@
                         data.forEach((value, index) => {
                             const sliceAngle = (value / 100) * 2 * Math.PI;
                             const labelAngle = currentAngle + sliceAngle / 2;
-                            const labelX = centerX + Math.cos(labelAngle) * (radius + 30);
-                            const labelY = centerY + Math.sin(labelAngle) * (radius + 30);
+                            const labelX = centerX + Math.cos(labelAngle) * (radius + 35);
+                            const labelY = centerY + Math.sin(labelAngle) * (radius + 35);
                             
-                            // White background for labels
-                            ctx.fillStyle = 'white';
+                            // Enhanced label background with shadow
+                            ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
+                            ctx.shadowBlur = 8;
+                            ctx.shadowOffsetX = 2;
+                            ctx.shadowOffsetY = 2;
+                            
+                            // Rounded rectangle background
+                            ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
                             ctx.beginPath();
-                            ctx.roundRect(labelX - 20, labelY - 10, 40, 20, 3);
+                            ctx.roundRect(labelX - 25, labelY - 12, 50, 24, 6);
                             ctx.fill();
+                            
+                            // Reset shadow
+                            ctx.shadowColor = 'transparent';
+                            ctx.shadowBlur = 0;
+                            ctx.shadowOffsetX = 0;
+                            ctx.shadowOffsetY = 0;
+                            
+                            // Border
+                            ctx.strokeStyle = chart.data.datasets[0].backgroundColor[index];
+                            ctx.lineWidth = 2;
+                            ctx.stroke();
                             
                             // Percentage text
                             ctx.fillStyle = '#16161A';
-                            ctx.font = 'bold 12px Arial';
+                            ctx.font = 'bold 14px Mona Sans, Arial';
                             ctx.textAlign = 'center';
-                            ctx.fillText(value + '%', labelX, labelY + 4);
+                            ctx.fillText(value + '%', labelX, labelY + 5);
                             
                             currentAngle += sliceAngle;
                         });
                     }
                 }]
+            });
+
+            // Tokenomics kartları ile chart arasında bağlantı
+            const tokenomicsCards = document.querySelectorAll('.tokenomics-card');
+            const chartColors = ['#ff8c00', '#ffa500', '#ffb84d', '#ffae1e'];
+            
+            tokenomicsCards.forEach((card, index) => {
+                // Kart hover efekti
+                card.addEventListener('mouseenter', () => {
+                    // Chart'ta ilgili dilimi vurgula
+                    if (tokenomicsChart.data.datasets[0].backgroundColor[index]) {
+                        const originalColor = tokenomicsChart.data.datasets[0].backgroundColor[index];
+                        tokenomicsChart.data.datasets[0].backgroundColor[index] = '#ffffff';
+                        tokenomicsChart.update('none');
+                        
+                        // Kısa süre sonra orijinal rengi geri yükle
+                        setTimeout(() => {
+                            tokenomicsChart.data.datasets[0].backgroundColor[index] = originalColor;
+                            tokenomicsChart.update('none');
+                        }, 300);
+                    }
+                    
+                    // Kart gölgesini chart renginde yap
+                    card.style.boxShadow = `0 8px 25px ${chartColors[index]}40, 0 4px 10px ${chartColors[index]}20`;
+                    card.style.transform = 'translateY(-8px)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    // Kart efektlerini geri al
+                    card.style.boxShadow = '';
+                    card.style.transform = '';
+                });
+                
+                // Chart hover efekti
+                tokenomicsChart.options.onHover = (event, elements) => {
+                    if (elements.length > 0) {
+                        const index = elements[0].index;
+                        // İlgili kartı vurgula
+                        tokenomicsCards.forEach((card, i) => {
+                            if (i === index) {
+                                card.style.boxShadow = `0 8px 25px ${chartColors[index]}40, 0 4px 10px ${chartColors[index]}20`;
+                                card.style.transform = 'translateY(-8px)';
+                            } else {
+                                card.style.boxShadow = '';
+                                card.style.transform = '';
+                            }
+                        });
+                    }
+                };
             });
         });
     </script>

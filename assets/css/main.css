@@ -2817,36 +2817,31 @@ body {
 }
 @font-face {
   font-family: Mona Sans;
-  src: url(../../../fonts/MonaSans-Regular.woff2) format("woff2"),
-    url(https://ryzome.ai/fonts/MonaSans-Regular.woff) format("woff");
+  src: url(../fonts/MonaSans-Regular.woff2) format("woff2");
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: Mona Sans;
-  src: url(../../../fonts/MonaSans-Light.woff2) format("woff2"),
-    url(https://ryzome.ai/fonts/MonaSans-Light.woff) format("woff");
+  src: url(../fonts/MonaSans-Light.woff2) format("woff2");
   font-weight: 300;
   font-display: swap;
 }
 @font-face {
   font-family: Mona Sans;
-  src: url(../../../fonts/MonaSans-Medium.woff2) format("woff2"),
-    url(https://ryzome.ai/fonts/MonaSans-Medium.woff) format("woff");
+  src: url(../fonts/MonaSans-Medium.woff2) format("woff2");
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
   font-family: Mona Sans;
-  src: url(../../../fonts/MonaSans-SemiBold.woff2) format("woff2"),
-    url(https://ryzome.ai/fonts/MonaSans-SemiBold.woff) format("woff");
+  src: url(../fonts/MonaSans-SemiBold.woff2) format("woff2");
   font-weight: 600;
   font-display: swap;
 }
 @font-face {
   font-family: Mona Sans;
-  src: url(../../../fonts/MonaSans-Bold.woff2) format("woff2"),
-    url(https://ryzome.ai/fonts/MonaSans-Bold.woff) format("woff");
+  src: url(../fonts/MonaSans-Bold.woff2) format("woff2");
   font-weight: 700;
   font-display: swap;
 }

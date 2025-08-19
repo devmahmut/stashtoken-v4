@@ -1720,3 +1720,63 @@ button[aria-controls]:hover {
 body {
   counter-reset: katexEqnNo mmlEqnNo;
 }
+
+/* Tokenomics Card Styles */
+.tokenomics-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-color: #16161A;
+    position: relative;
+    overflow: hidden;
+}
+
+.tokenomics-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 174, 30, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.tokenomics-card:hover::before {
+    left: 100%;
+}
+
+.tokenomics-card:hover {
+    transform: translateY(-8px);
+    border-color: #ffae1e;
+}
+
+.tokenomics-chart {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 4px 20px rgba(255, 174, 30, 0.1));
+}
+
+.tokenomics-chart:hover {
+    transform: scale(1.02);
+    filter: drop-shadow(0 8px 30px rgba(255, 174, 30, 0.2));
+}
+
+/* Tokenomics kartları için özel hover efektleri */
+.tokenomics-card:nth-child(1):hover {
+    border-color: #ff8c00;
+    box-shadow: 0 8px 25px rgba(255, 140, 0, 0.3), 0 4px 10px rgba(255, 140, 0, 0.2);
+}
+
+.tokenomics-card:nth-child(2):hover {
+    border-color: #ffa500;
+    box-shadow: 0 8px 25px rgba(255, 165, 0, 0.3), 0 4px 10px rgba(255, 165, 0, 0.2);
+}
+
+.tokenomics-card:nth-child(3):hover {
+    border-color: #ffb84d;
+    box-shadow: 0 8px 25px rgba(255, 184, 77, 0.3), 0 4px 10px rgba(255, 184, 77, 0.2);
+}
+
+.tokenomics-card:nth-child(4):hover {
+    border-color: #ffae1e;
+    box-shadow: 0 8px 25px rgba(255, 174, 30, 0.3), 0 4px 10px rgba(255, 174, 30, 0.2);
+}
