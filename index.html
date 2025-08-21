@@ -17,6 +17,10 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
     <!-- Favicon -->
     <link rel="icon" href="assets/images/favicon.ico" sizes="any"/>
     
@@ -53,191 +57,6 @@
         @-webkit-keyframes nprogress-spinner{0%{-webkit-transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg)}}
         @keyframes nprogress-spinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
         
-        /* Section Animasyonları */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .animate-on-scroll.animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Hero Section Özel Animasyonları */
-        .hero-animate {
-            opacity: 0;
-            transform: translateY(100px);
-            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .hero-animate.animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .hero-animate.delay-100 {
-            transition-delay: 0.1s;
-        }
-        
-        .hero-animate.delay-200 {
-            transition-delay: 0.2s;
-        }
-        
-        .hero-animate.delay-300 {
-            transition-delay: 0.3s;
-        }
-        
-        .hero-animate.delay-400 {
-            transition-delay: 0.4s;
-        }
-        
-        .hero-animate.delay-500 {
-            transition-delay: 0.5s;
-        }
-        
-        /* Fade In Animasyonu */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out;
-        }
-        
-        .fade-in.animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Slide In Left Animasyonu */
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .slide-in-left.animate-in {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        /* Slide In Right Animasyonu */
-        .slide-in-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .slide-in-right.animate-in {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        /* Scale In Animasyonu */
-        .scale-in {
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .scale-in.animate-in {
-            opacity: 1;
-            transform: scale(1);
-        }
-        
-        /* Hero Background Özel Animasyonu */
-        .hero-background {
-            opacity: 0;
-            transform: scale(1.1) translateY(20px);
-            transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-            filter: blur(2px);
-        }
-        
-        .hero-background.animate-in {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-            filter: blur(0px);
-        }
-        
-        /* Stagger Animasyonları */
-        .stagger-item {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .stagger-item.animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .stagger-item:nth-child(1) { transition-delay: 0.1s; }
-        .stagger-item:nth-child(2) { transition-delay: 0.2s; }
-        .stagger-item:nth-child(3) { transition-delay: 0.3s; }
-        .stagger-item:nth-child(4) { transition-delay: 0.4s; }
-        
-        /* Hover Efektleri */
-        .stagger-item:hover {
-            transform: translateY(-5px);
-            transition: all 0.3s ease;
-        }
-        
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Animasyon Performans Optimizasyonu */
-        .animate-on-scroll,
-        .fade-in,
-        .slide-in-left,
-        .slide-in-right,
-        .scale-in,
-        .stagger-item,
-        .hero-animate {
-            will-change: transform, opacity;
-            backface-visibility: hidden;
-        }
-        
-        /* Bounce Animasyonu */
-        @keyframes bounceIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.3) translateY(100px);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.05) translateY(-10px);
-            }
-            70% {
-                transform: scale(0.9) translateY(0);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
-        
-        .bounce-in {
-            animation: bounceIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-        
-        /* Fade In Up Animasyonu */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(60px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out;
-        }
-        
         /* FAQ Styles */
         .faq-content {
             max-height: 0 !important;
@@ -250,11 +69,11 @@
         }
         
         .faq-item {
-            transition: background-color 0.3s ease;
+            /* transition: background-color 0.3s ease; */
         }
         
         .faq-item.open {
-            background-color: #E8E8E8 !important;
+            /* background-color: #E8E8E8 !important; */
         }
         
         .faq-icon {
@@ -318,9 +137,97 @@
             height: 2px;
             background: linear-gradient(90deg, #ffae1e, #4A7C59, #2D5A27);
         }
+        
+        /* Custom Cursor Styles - Devre dışı */
+        /* 
+        * {
+            cursor: none !important;
+        }
+        */
+        
+        /* Normal cursor'ları özelleştir */
+        body {
+            cursor: default;
+        }
+        
+        button, .cursor-pointer, a {
+            cursor: pointer !important;
+        }
+        
+        #customCursor {
+            display: none !important;
+        }
+        
+        #cursorDot {
+            display: none !important;
+        }
+        
+        /* Floating Elements */
+        .floating-element {
+            will-change: transform;
+            filter: blur(0.5px);
+        }
+        
+        /* Enhanced Hover Effects */
+        .tokenomics-card, .stage-card {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        /* Typing Text Cursor */
+        #typingText::after {
+            content: '|';
+            animation: blink 1s infinite;
+            color: #ffae1e;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        /* Enhanced Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { 
+                box-shadow: 0 0 5px rgba(255, 174, 30, 0.3);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 20px rgba(255, 174, 30, 0.6);
+                transform: scale(1.05);
+            }
+        }
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Enhanced Button Styles - Kaldırıldı */
+        /*
+        button:hover, .cursor-pointer:hover {
+            animation: pulse-glow 2s infinite;
+        }
+        */
     </style>
 </head>
 <body>
+    <!-- Progress Bar -->
+    <div class="progress-bar fixed top-0 left-0 w-full h-1 bg-[#ffae1e] z-[9999] transform scale-x-0 origin-left"></div>
+    
+
+    
+    <!-- Custom Cursor -->
+    <div id="customCursor" class="fixed w-6 h-6 rounded-full border-2 border-[#ffae1e] pointer-events-none z-[9998] transition-all duration-300 ease-out" style="display: block; opacity: 1;"></div>
+    <div id="cursorDot" class="fixed w-1 h-1 bg-[#ffae1e] rounded-full pointer-events-none z-[9999]" style="display: block; opacity: 1;"></div>
+    
+
+    
     <div class="relative min-h-screen bg-white font-mona text-[#012212]">
         <!-- Hero Background -->
         <img alt="stashtoken tree background" loading="lazy" width="1440" height="1507" 
@@ -328,15 +235,15 @@
              style="color:transparent; object-fit: cover; height: 100%;" src="assets/images/hero-background.svg"/>
         
         <!-- Navigation -->
-        <nav class="fixed left-0 right-0 top-0 z-50 transition-transform duration-300 translate-y-0">
+        <nav id="navbar" class="fixed left-0 right-0 top-0 z-50">
             <div class="flex w-full flex-col items-center justify-center px-4 md:px-8">
                 <div class="flex h-[86px] w-full max-w-[1376px] items-center justify-between gap-x-4 bg-transparent md:h-[128px]">
-                    <div class="slide-in-left flex h-[50px] w-auto items-center justify-between rounded-lg bg-[#E2E2E2] px-4 md:h-[64px]">
+                    <div class="flex h-[50px] w-auto items-center justify-between rounded-lg bg-[#E2E2E2] px-4 md:h-[64px]">
                         <img alt="stashtoken logo" loading="lazy" width="133" height="30" 
                              style="color:transparent; width: auto; height: 200px;" 
                              src="assets/images/logo.svg"/>
                     </div>
-                    <div class="slide-in-right flex items-center justify-center gap-x-6 rounded-lg bg-[#E2E2E2] px-0 md:h-[64px] md:w-fit md:px-4">
+                    <div class="flex items-center justify-center gap-x-6 rounded-lg bg-[#E2E2E2] px-0 md:h-[64px] md:w-fit md:px-4">
                             <button class="p-2">
                                 Go to StashOffer
                             </button>
@@ -346,24 +253,34 @@
         </nav>
 
         <!-- Hero Section -->
-        <div class="relative w-full pt-[calc(108px_+_54px)] md:pt-[calc(108px_+_92px)]">
+        <div class="hero-section relative w-full pt-[calc(108px_+_54px)] md:pt-[calc(108px_+_92px)]">
+            <!-- Floating Elements -->
+            <div class="floating-elements absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="floating-element absolute w-4 h-4 bg-[#ffae1e] rounded-full opacity-20" style="top: 20%; left: 10%;"></div>
+                <div class="floating-element absolute w-6 h-6 bg-[#4A7C59] rounded-full opacity-15" style="top: 40%; right: 15%;"></div>
+                <div class="floating-element absolute w-3 h-3 bg-[#2D5A27] rounded-full opacity-25" style="top: 60%; left: 20%;"></div>
+                <div class="floating-element absolute w-5 h-5 bg-[#ffae1e] rounded-full opacity-10" style="top: 80%; right: 25%;"></div>
+                <div class="floating-element absolute w-2 h-2 bg-[#4A7C59] rounded-full opacity-30" style="top: 30%; left: 80%;"></div>
+                <div class="floating-element absolute w-4 h-4 bg-[#2D5A27] rounded-full opacity-20" style="top: 70%; right: 10%;"></div>
+            </div>
+            
             <div class="relative flex h-full flex-col items-center justify-center">
-                <div class="hero-animate delay-100 mb-6 flex h-8 w-[412px] items-center rounded-lg bg-arcGreen px-3 text-[14px]">
+                <div class="hero-badge mb-6 flex h-8 w-[412px] items-center rounded-lg bg-arcGreen px-3 text-[14px]">
                                          <div class="rounded-md h-4 w-full justify-center items-center flex">
                          <span>🚀 StashToken Mainnet is Live!
                              Start earning rewards</span>
                      </div>
                 </div>
-                <span class="hero-animate delay-200">Stake. Earn. Compound.</span>
+                <span class="hero-subtitle">Stake. Earn. Compound.</span>
                 <div class="flex flex-col items-center px-4 pt-6 text-center">
-                    <div class="hero-animate delay-300 flex flex-col text-[42px] font-medium leading-none md:text-[80px]">
+                    <div class="hero-title flex flex-col text-[42px] font-medium leading-none md:text-[80px]">
                         <span>Your crypto,</span>
-                        <span>maximized.</span>
+                        <span id="typingText">maximized.</span>
                     </div>
-                    <span class="hero-animate delay-400 mt-4 w-full text-[16px] md:w-[65%] md:text-[18px]">
+                    <span class="hero-description mt-4 w-full text-[16px] md:w-[65%] md:text-[18px]">
                         Advanced staking protocol. Automated yield optimization. Where your assets work harder with intelligent DeFi strategies.
                     </span>
-                    <div class="hero-animate delay-500 mt-8 flex items-center gap-x-3">
+                    <div class="hero-buttons mt-8 flex items-center gap-x-3">
                         <div class="flex h-10 items-center justify-center rounded-lg border border-[#012212] bg-[#012212] px-4 text-[18px] text-white transition-colors duration-500 hover:bg-transparent hover:text-[#012212] cursor-pointer">
                             Start Staking
                         </div>
@@ -380,8 +297,8 @@
 
         <!-- Video Section -->
         <div class="flex w-full justify-center pt-[56px]">
-            <div class="flex w-full items-center justify-center px-4 md:px-8">
-                <div class="scale-in w-full max-w-[1372px] overflow-hidden rounded-xl">
+            <div class="flex w-full items-center justify-center px-8 md:px-16">
+                <div class="video-container w-full max-w-[1372px] overflow-hidden rounded-xl">
                     <div class="relative aspect-[2040/1080]">
                         <video src="assets/images/demo-video.webm" autoplay loop muted playsinline 
                                class="absolute left-0 top-0 h-full w-full object-cover"></video>
@@ -391,9 +308,9 @@
         </div>
 
         <!-- About Section -->
-        <div class="flex w-full items-center justify-center px-4 md:px-8">
-            <div class="relative z-10 flex w-full max-w-[1372px] flex-col bg-white" style="margin-top: 172px;">
-                <div class="animate-on-scroll mb-[64px] flex w-full flex-col gap-y-4 md:mb-[190px]">
+        <div class="flex w-full items-center justify-center pt-[124px]">
+            <div class="about-content relative z-10 flex w-full max-w-[1372px] flex-col bg-white md:px-16 py-16 md:py-24">
+                <div class="mb-16 flex w-full flex-col gap-y-4">
                     <span class="text-[16px]">About StashToken</span>
                     <div class="flex w-full flex-col justify-between gap-x-4 gap-y-4 md:flex-row">
                         <span class="flex text-[32px]">How StashToken Works</span>
@@ -404,13 +321,13 @@
                 </div>
                 
                 <div class="flex w-full flex-col items-start justify-between gap-x-12 gap-y-8 xl:flex-row">
-                    <div class="slide-in-left w-full xl:flex-1">
+                    <div class="w-full xl:flex-1">
                         <img alt="How to use StashToken" loading="lazy" width="1024" height="654" 
                              class="h-auto w-full" style="color:transparent" 
                              src="assets/images/product-demo.webp"/>
                     </div>
-                    <div class="slide-in-right flex w-full flex-col gap-8 xl:w-[300px]">
-                        <div class="stagger-item flex w-full flex-col">
+                    <div class="about-steps flex w-full flex-col gap-8 xl:w-[300px]">
+                        <div class="about-step flex w-full flex-col">
                             <div class="order-1 mb-8 mt-2 flex flex-col gap-y-1 md:order-2 md:mb-0">
                                 <div class="mb-4 flex h-[1px] w-8 bg-[#161616]"></div>
                                 <span class="text-[24px]">Connect Your Wallet</span>
@@ -419,7 +336,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="stagger-item flex w-full flex-col">
+                        <div class="about-step flex w-full flex-col">
                             <div class="order-1 mb-8 mt-8 flex flex-col gap-y-1 md:order-2 md:mb-0">
                                 <div class="mb-4 flex h-[1px] w-8 bg-[#161616]"></div>
                                 <span class="text-[24px]">Choose Your Strategy</span>
@@ -428,7 +345,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="stagger-item flex w-full flex-col">
+                        <div class="about-step flex w-full flex-col">
                             <div class="order-1 mb-8 mt-8 flex flex-col gap-y-1 md:order-2 md:mb-0">
                                 <div class="mb-4 flex h-[1px] w-8 bg-[#161616]"></div>
                                 <span class="text-[24px]">Maximize with DeFi</span>
@@ -443,9 +360,16 @@
         </div>
 
         <!-- Tokenomics Section -->
-        <div class="flex w-full items-center justify-center px-4 md:px-8 min-h-screen">
-            <div class="flex w-full max-w-[1376px] flex-col bg-white py-8 md:py-[124px] justify-center">
-                <div class="animate-on-scroll mb-[64px] flex w-full flex-col gap-y-4">
+        <div class="tokenomics-section flex w-full items-center justify-center relative overflow-hidden">
+            <div class="flex w-full max-w-[1376px] flex-col px-8 md:px-16 py-16 md:py-24 rounded-lg relative overflow-hidden">
+                <!-- Video Background -->
+                <video autoplay muted playsinline class="absolute inset-0 w-full h-full object-cover rounded-lg z-0">
+                    <source src="assets/images/tokenomics-bg.mp4" type="video/mp4">
+                </video>
+                
+                <!-- Content Overlay -->
+                <div class="relative z-10">
+                <div class="mb-[64px] flex w-full flex-col gap-y-4">
                     <span class="text-[16px]">Tokenomics</span>
                     <div class="flex w-full flex-col justify-between gap-y-4 md:flex-row">
                         <span class="flex text-[32px]">Token Distribution</span>
@@ -455,10 +379,10 @@
                     </div>
                 </div>
                 
-                                <div class="flex w-full flex-col gap-x-8 gap-y-[64px] md:flex-row items-center">
-                    <div class="slide-in-left order-2 flex w-full flex-col md:order-1 md:w-1/2">
+                <div class="flex w-full flex-col gap-x-8 gap-y-[64px] md:flex-row items-center">
+                    <div class="order-2 flex w-full flex-col md:order-1 md:w-1/2">
                         <div class="grid grid-cols-2 gap-8">
-                            <div class="stagger-item flex h-auto items-end border border-[#16161A] rounded-lg p-6 md:h-[200px] md:px-8 tokenomics-card">
+                            <div class="flex h-auto items-end border border-[#16161A] rounded-lg p-6 md:h-[160px] md:px-8 tokenomics-card">
                                 <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
                                         <path d="M128,56A72,72,0,0,0,56,128c0,39.7,32.3,72,72,72s72-32.3,72-72S167.7,56,128,56Zm0,128a56,56,0,1,1,56-56A56.06,56.06,0,0,1,128,128Zm0-96a40,40,0,1,0,40,40A40,40,0,0,0,128,32Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,96Z"></path>
@@ -472,7 +396,7 @@
                                 </div>
                             </div>
                             
-                            <div class="stagger-item flex h-auto items-end border border-[#16161A] rounded-lg p-6 md:h-[200px] md:px-8 tokenomics-card">
+                            <div class="flex h-auto items-end border border-[#16161A] rounded-lg p-6 md:h-[160px] md:px-8 tokenomics-card">
                                 <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
                                         <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V72H40ZM216,200H40V88H216V200Zm-16-64a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,136Zm0,32a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,168ZM80,136a16,16,0,1,1-16-16A16,16,0,0,1,80,136Zm0,32a16,16,0,1,1-16-16A16,16,0,0,1,80,72Z"></path>
@@ -486,7 +410,7 @@
                                 </div>
                             </div>
                             
-                            <div class="stagger-item flex h-auto items-end border border-[#16161A] rounded-lg p-6 md:h-[200px] md:px-8 tokenomics-card">
+                            <div class="flex h-auto items-end border border-[#16161A] rounded-lg p-6 md:h-[160px] md:px-8 tokenomics-card">
                                 <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
                                         <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48-88a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"></path>
@@ -500,10 +424,10 @@
                                 </div>
                             </div>
                             
-                            <div class="stagger-item flex h-auto items-end border border-[#16161A] rounded-lg p-6 md:h-[200px] md:px-8 tokenomics-card">
+                            <div class="flex h-auto items-end border border-[#16161A] rounded-lg p-6 md:h-[160px] md:px-8 tokenomics-card">
                                 <div class="mt-8 flex flex-col gap-y-4 md:mt-0 md:gap-y-11">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
-                                        <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V72H40ZM216,200H40V88H216V200Zm-16-64a8,8,0,0,1-1,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,136Zm0,32a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,168ZM80,136a16,16,0,1,1-16-16A16,16,0,0,1,80,136Zm0,32a16,16,0,1,1-16-16A16,16,0,0,1,80,72Z"></path>
+                                        <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V72H40ZM216,200H40V88H216V200Zm-16-64a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,136Zm0,32a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h72A8,8,0,0,1,200,168ZM80,136a16,16,0,1,1-16-16A16,16,0,0,1,80,136Zm0,32a16,16,0,1,1-16-16A16,16,0,0,1,80,72Z"></path>
                                     </svg>
                                     <div class="font-regular flex flex-col">
                                         <span class="text-[24px]">CEX Listings</span>
@@ -516,13 +440,14 @@
                         </div>
                     </div>
                     
-                    <div class="slide-in-right order-1 flex w-full flex-col md:order-2 md:w-1/2">
-                        <div class="flex h-auto items-center justify-end md:h-[400px]">
-                            <div class="relative w-full h-full flex justify-end">
-                                <canvas id="tokenomicsChart" width="400" height="400" class="w-full h-full max-w-[500px] tokenomics-chart"></canvas>
+                    <div class="order-1 flex w-full flex-col md:order-2 md:w-1/2">
+                        <div class="flex h-auto items-center justify-end">
+                            <div class="relative w-full flex justify-end">
+                                <canvas id="tokenomicsChart" class="w-full max-w-[320px] max-h-[320px] tokenomics-chart"></canvas>
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -530,11 +455,11 @@
 
 
         <!-- Roadmap Section -->
-        <div class="flex w-full text-white items-center justify-center px-4 md:px-8 relative min-h-screen md:min-h-screen overflow-hidden">
+        <div class="flex w-full text-white items-center justify-center py-[124px] relative overflow-hidden">
             <!-- Roadmap Background -->
-            <img src="assets/images/rm-bg.svg" alt="Roadmap Background" class="absolute inset-0 w-full h-full object-contain md:object-cover">
-            <div class="flex w-full max-w-[1376px] flex-col py-4 md:py-8 lg:py-[124px] relative z-10 px-4">
-                <div class="animate-on-scroll mb-[64px] flex w-full flex-col gap-y-4">
+
+            <div class="flex w-full max-w-[1376px] flex-col px-8 md:px-16 py-16 md:py-24 relative z-10 rounded-lg bg-cover bg-center" style="background-image: url('assets/images/rm-bg.svg');">
+                <div class="mb-[64px] flex w-full flex-col gap-y-4">
                     <span class="text-[16px]">Roadmap</span>
                     <div class="flex w-full flex-col justify-between gap-y-4 md:flex-row">
                         <span class="flex text-[32px]">Development Journey</span>
@@ -549,38 +474,43 @@
                     <div class="flex w-full justify-center mb-8">
                                                 <div class="relative w-full flex justify-center">
                             <!-- Custom Chart SVG -->
-                            <img src="assets/images/infografik.svg" alt="Roadmap" class="h-auto" style="width: 50%; max-width: 800px;">
-                            
-                                                        <button class="quarter-btn quarter-btn-1 absolute flex items-center justify-center flex-col" data-quarter="q1">
-                                <svg class="w-3 h-3 text-[#ffae1e] opacity-40 transition-all duration-300 hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                                </svg>
-                            </button>
-                            
-                            <button class="quarter-btn quarter-btn-2 absolute flex items-center justify-center flex-col" data-quarter="q2">
-                                <svg class="w-3 h-3 text-[#ffae1e] opacity-40 transition-all duration-300 hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                                </svg>
-                            </button>
-                            
-                            <button class="quarter-btn quarter-btn-3 absolute flex items-center justify-center flex-col" data-quarter="q3">
-                                <svg class="w-3 h-3 text-[#ffae1e] opacity-40 transition-all duration-300 hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                                </svg>
-                            </button>
-                            
-                            <button class="quarter-btn quarter-btn-4 absolute flex items-center justify-center flex-col" data-quarter="q4">
-                                <svg class="w-3 h-3 text-[#ffae1e] opacity-40 transition-all duration-300 hover:scale-110" fill="currentColor" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                                </svg>
-                            </button>
+                            <!-- Inline SVG for interactivity -->
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                 width="1318" viewBox="0 0 988.5 424.499987" height="566" 
+                                 class="h-auto" style="width: 50%; max-width: 800px;" 
+                                 preserveAspectRatio="xMidYMid meet" version="1.2">
+                                
+                                <!-- Orijinal SVG içeriği - background -->
+                                <image href="assets/images/infografik.svg" width="100%" height="100%"/>
+                                
+                                <!-- Yıldızlar - En üstte (tıklanabilir) -->
+                                <g class="quarter-star" data-quarter="q1" style="cursor:pointer;">
+                                    <circle cx="346" cy="277" r="12" fill="#ffae1e" fill-opacity="0.2" stroke="#ffae1e" stroke-width="1"/>
+                                    <path d="M 346 269 L 348 275 L 354 275 L 349.5 279 L 351.5 285 L 346 281 L 340.5 285 L 342.5 279 L 338 275 L 344 275 Z" fill="#ffae1e"/>
+                                </g>
+                                
+                                <g class="quarter-star" data-quarter="q2" style="cursor:pointer;">
+                                    <circle cx="604" cy="323" r="12" fill="#ffae1e" fill-opacity="0.2" stroke="#ffae1e" stroke-width="1"/>
+                                    <path d="M 604 315 L 606 321 L 612 321 L 607.5 325 L 609.5 331 L 604 327 L 598.5 331 L 600.5 325 L 596 321 L 602 321 Z" fill="#ffae1e"/>
+                                </g>
+                                
+                                <g class="quarter-star" data-quarter="q3" style="cursor:pointer;">
+                                    <circle cx="866" cy="191" r="12" fill="#ffae1e" fill-opacity="0.2" stroke="#ffae1e" stroke-width="1"/>
+                                    <path d="M 866 183 L 868 189 L 874 189 L 869.5 193 L 871.5 199 L 866 195 L 860.5 199 L 862.5 193 L 858 189 L 864 189 Z" fill="#ffae1e"/>
+                                </g>
+                                
+                                <g class="quarter-star" data-quarter="q4" style="cursor:pointer;">
+                                    <circle cx="665" cy="84" r="12" fill="#ffae1e" fill-opacity="0.2" stroke="#ffae1e" stroke-width="1"/>
+                                    <path d="M 665 76 L 667 82 L 673 82 L 668.5 86 L 670.5 92 L 665 88 L 659.5 92 L 661.5 86 L 657 82 L 663 82 Z" fill="#ffae1e"/>
+                                </g>
+                            </svg>
                         </div>
                     </div>
                     
                     <!-- Stage Kartları -->
-                    <div class="flex flex-col md:flex-row gap-4 md:gap-8 w-full justify-between mt-8">
+                    <div class="roadmap-cards flex flex-col md:flex-row gap-4 md:gap-8 w-full justify-between mt-8">
                         <!-- Q1 Kartı -->
-                        <div class="stagger-item stage-card w-full md:w-1/4" data-quarter="q1">
+                        <div class="stage-card w-full md:w-1/4" data-quarter="q1">
                             <div class="bg-white border-2 border-[#ffae1e] rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="w-3 h-3 bg-[#ffae1e] rounded-full"></div>
@@ -607,7 +537,7 @@
                         </div>
                         
                         <!-- Q2 Kartı -->
-                        <div class="stagger-item stage-card w-full md:w-1/4" data-quarter="q2">
+                        <div class="stage-card w-full md:w-1/4" data-quarter="q2">
                             <div class="bg-white border-2 border-[#4A7C59] rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="w-3 h-3 bg-[#ffae1e] rounded-full"></div>
@@ -634,7 +564,7 @@
                         </div>
                         
                         <!-- Q3 Kartı -->
-                        <div class="stagger-item stage-card w-full md:w-1/4" data-quarter="q3">
+                        <div class="stage-card w-full md:w-1/4" data-quarter="q3">
                             <div class="bg-white border-2 border-[#2D5A27] rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="w-3 h-3 bg-[#ffae1e] rounded-full"></div>
@@ -661,7 +591,7 @@
                         </div>
                         
                         <!-- Q4 Kartı -->
-                        <div class="stagger-item stage-card w-full md:w-1/4" data-quarter="q4">
+                        <div class="stage-card w-full md:w-1/4" data-quarter="q4">
                             <div class="bg-white border-2 border-[#6B9A7A] rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="w-3 h-3 bg-[#ffae1e] rounded-full"></div>
@@ -693,8 +623,8 @@
 
       
         <!-- CTA Section -->
-        <div class="flex w-full items-center justify-center px-4 py-8 md:px-8 md:py-[56px]">
-            <div class="fade-in flex w-full max-w-[1376px] flex-col items-center justify-center rounded-lg bg-cover bg-center p-8" style="background-image: url('assets/images/getstarted.svg');">
+        <div class="cta-section flex w-full items-center justify-center py-[124px]">
+            <div class="cta-content flex w-full max-w-[1376px] flex-col items-center justify-center rounded-lg bg-cover bg-center md:px-16 py-16 md:py-24" style="background-image: url('assets/images/getstarted.svg');">
                 <span class="mb-4 text-[#16161A]">Your second wallet, now with intelligence.</span>
                 <div class="mb-6 flex flex-col text-center text-[56px] font-medium leading-none text-[#16161A] md:mb-[60px]">
                     <div class="hidden flex-col md:flex">
@@ -716,16 +646,16 @@
 
         <!-- FAQ Section -->
         <div
-        class="flex w-full flex-col items-center justify-center bg-white py-8 md:py-[124px]"
+        class="faq-section flex w-full flex-col items-center justify-center bg-white py-[124px]"
       >
-        <div class="flex w-full items-center justify-center px-4 md:px-8">
-          <div class="flex w-full max-w-[1376px] flex-col gap-y-4">
-            <span class="animate-on-scroll text-[16px]">Curious mind asks</span>
+        <div class="flex w-full items-center justify-center">
+          <div class="flex w-full max-w-[1376px] flex-col gap-y-4 md:px-16">
+            <span class="text-[16px]">Curious mind asks</span>
             <div
               class="flex w-full flex-col justify-between gap-x-8 gap-y-[64px] md:flex-row"
             >
-              <span class="animate-on-scroll flex text-[32px]">FAQ</span>
-              <div class="fade-in flex w-full max-w-[906px] flex-col gap-y-6">
+              <span class="flex text-[32px]">FAQ</span>
+              <div class="flex w-full max-w-[906px] flex-col gap-y-6">
                 <div
                   class="flex w-full flex-col gap-y-5"
                   data-orientation="vertical"
@@ -866,22 +796,22 @@
       </div>
 
         <!-- Footer Logo -->
-        <div class="flex w-full items-center justify-center px-4 md:px-8">
+        <div class="flex w-full items-center justify-center px-8 md:px-16 pt-[124px]">
             <img alt="footer graphic" loading="lazy" width="1440" height="200" 
-                 class="fade-in mb-8 h-auto w-full max-w-[1376px] md:mb-[108px]" 
+                 class="mb-8 h-auto w-full max-w-[1376px] md:mb-[108px]" 
                  style="color:transparent;object-fit:contain" src="assets/images/footer-graphic.svg"/>
         </div>
 
         <!-- Footer -->
-        <div class="flex w-full items-center justify-center px-8">
-            <div class="fade-in flex w-full max-w-[1372px] items-center justify-between bg-white pb-[56px]">
+        <div class="flex w-full items-center justify-center px-8 md:px-16">
+            <div class="flex w-full max-w-[1372px] items-center justify-between bg-white pb-[124px]">
                 <div class="flex w-full justify-between">
-                    <div class="slide-in-left w-full md:w-auto">
+                    <div class="w-full md:w-auto">
                         <img alt="stashtoken logo" loading="lazy" width="133" height="30" 
                              style="color:transparent; width: auto; height: 200px;" 
                              src="assets/images/logo.svg"/>
                     </div>
-                    <div class="slide-in-right flex items-center justify-center gap-x-2">
+                    <div class="flex items-center justify-center gap-x-2">
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="scale-[1.75] cursor-pointer rounded px-2 hover:bg-[#303037]/50">
                                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -900,7 +830,7 @@
                             </svg>
                         </div>
                         <div>
-                            <svg class="h-6 w-6 scale-[1.75] cursor-pointer rounded px-2 hover:btn-2 hover:bg-[#303037]/50" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <svg class="h-6 w-6 scale-[1.75] cursor-pointer rounded px-2 hover:bg-[#303037]/50" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"></path>
                             </svg>
                         </div>
@@ -913,65 +843,6 @@
     <!-- FAQ JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Scroll-triggered Animasyonlar
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-in');
-                        
-                        // Stagger animasyonları için özel kontrol
-                        if (entry.target.classList.contains('stagger-item')) {
-                            const parent = entry.target.parentElement;
-                            if (parent) {
-                                const siblings = parent.querySelectorAll('.stagger-item');
-                                siblings.forEach((sibling, index) => {
-                                    setTimeout(() => {
-                                        sibling.classList.add('animate-in');
-                                    }, index * 100);
-                                });
-                            }
-                        }
-                    }
-                });
-            }, observerOptions);
-            
-            // Tüm animasyon elementlerini gözlemle
-            const animatedElements = document.querySelectorAll('.animate-on-scroll, .fade-in, .slide-in-left, .slide-in-right, .scale-in, .stagger-item');
-            animatedElements.forEach(element => {
-                observer.observe(element);
-            });
-            
-            // Sayfa yüklendiğinde tüm animasyonları başlat
-            window.addEventListener('load', () => {
-                // Hero section animasyonları
-                const heroElements = document.querySelectorAll('.hero-animate');
-                heroElements.forEach((element, index) => {
-                    setTimeout(() => {
-                        element.classList.add('animate-in');
-                    }, index * 100);
-                });
-                
-                // Navigation animasyonları
-                const navElements = document.querySelectorAll('.slide-in-left, .slide-in-right');
-                navElements.forEach((element, index) => {
-                    setTimeout(() => {
-                        element.classList.add('animate-in');
-                    }, 200 + (index * 100));
-                });
-                
-                // Hero background animasyonu
-                setTimeout(() => {
-                    const heroBg = document.querySelector('.hero-background');
-                    if (heroBg) {
-                        heroBg.classList.add('animate-in');
-                    }
-                }, 500);
-            });
             const faqButtons = document.querySelectorAll('.faq-button');
             
             faqButtons.forEach(button => {
@@ -1003,13 +874,13 @@
                 });
             });
             
-            // Roadmap Functionality - Q'lara VE stage kartlarına tıklayınca açıklamalar açılsın
-            const quarterBtns = document.querySelectorAll('.quarter-btn');
+            // Roadmap Functionality - SVG yıldızları ve stage kartlarına tıklayınca açıklamalar açılsın
+            const quarterStars = document.querySelectorAll('.quarter-star');
             const stageCards = document.querySelectorAll('.stage-card');
             
-            // Q butonlarına tıklama
-            quarterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
+            // SVG yıldızlarına tıklama
+            quarterStars.forEach(star => {
+                star.addEventListener('click', function() {
                     const quarter = this.getAttribute('data-quarter');
                     activateQuarter(quarter);
                 });
@@ -1025,38 +896,34 @@
             
             // Quarter'ı aktif etme fonksiyonu
             function activateQuarter(quarter) {
-                console.log('Activating quarter:', quarter);
                 
-                // Tüm butonlardan active class'ını kaldır
-                quarterBtns.forEach(b => b.classList.remove('active'));
+                // Tüm yıldızlardan active class'ını kaldır
+                quarterStars.forEach(star => star.classList.remove('active'));
                 
                 // Tüm kartlardan active class'ını kaldır
                 stageCards.forEach(card => card.classList.remove('active'));
                 
-                // İlgili Q butonunu aktif et
-                const targetBtn = document.querySelector(`.quarter-btn[data-quarter="${quarter}"]`);
-                if (targetBtn) {
-                    targetBtn.classList.add('active');
-                    console.log('Button activated:', targetBtn);
+                // İlgili yıldızı aktif et
+                const targetStar = document.querySelector(`.quarter-star[data-quarter="${quarter}"]`);
+                if (targetStar) {
+                    targetStar.classList.add('active');
                 }
                 
                 // İlgili stage kartını aktif et
                 const targetCard = document.querySelector(`.stage-card[data-quarter="${quarter}"]`);
                 if (targetCard) {
                     targetCard.classList.add('active');
-                    console.log('Card activated:', targetCard);
+
                     
                     // Stage content'i kontrol et
                     const stageContent = targetCard.querySelector('.stage-content');
                     if (stageContent) {
-                        console.log('Stage content found:', stageContent);
-                        console.log('Stage content classes:', stageContent.className);
                     }
                 }
             }
             
-            // Sayfa yüklendiğinde hiçbir Q ve kart aktif olmasın
-            quarterBtns.forEach(btn => btn.classList.remove('active'));
+            // Sayfa yüklendiğinde hiçbir yıldız ve kart aktif olmasın
+            quarterStars.forEach(star => star.classList.remove('active'));
             stageCards.forEach(card => card.classList.remove('active'));
             
             // Tokenomics Chart
@@ -1082,7 +949,7 @@
                 },
                 options: {
                     responsive: true,
-                    maintainAspectRatio: false,
+                    maintainAspectRatio: true,
                     plugins: {
                         legend: {
                             display: false
@@ -1236,6 +1103,461 @@
                     }
                 };
             });
+        });
+
+        // Eski navbar kodları kaldırıldı
+
+        // GSAP Animasyonları
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Loading Screen kaldırıldı
+
+        // Particle System kaldırıldı
+
+        // Custom Cursor - Devre dışı
+        /*
+        const customCursor = document.getElementById('customCursor');
+        const cursorDot = document.getElementById('cursorDot');
+        let cursorX = window.innerWidth / 2, cursorY = window.innerHeight / 2;
+        let dotX = window.innerWidth / 2, dotY = window.innerHeight / 2;
+
+        // Initialize cursor position
+        customCursor.style.left = (cursorX - 12) + 'px';
+        customCursor.style.top = (cursorY - 12) + 'px';
+        cursorDot.style.left = (dotX - 2) + 'px';
+        cursorDot.style.top = (dotY - 2) + 'px';
+
+        document.addEventListener('mousemove', (e) => {
+            cursorX = e.clientX;
+            cursorY = e.clientY;
+        });
+
+        function updateCursor() {
+            dotX += (cursorX - dotX) * 0.15;
+            dotY += (cursorY - dotY) * 0.15;
+            
+            customCursor.style.left = (cursorX - 12) + 'px';
+            customCursor.style.top = (cursorY - 12) + 'px';
+            
+            cursorDot.style.left = (dotX - 2) + 'px';
+            cursorDot.style.top = (dotY - 2) + 'px';
+            
+            requestAnimationFrame(updateCursor);
+        }
+        updateCursor();
+
+        // Cursor interactions
+        document.querySelectorAll('button, .cursor-pointer, a').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                gsap.to(customCursor, {
+                    duration: 0.3,
+                    scale: 1.5,
+                    backgroundColor: 'rgba(255, 174, 30, 0.2)',
+                    ease: "power2.out"
+                });
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                gsap.to(customCursor, {
+                    duration: 0.3,
+                    scale: 1,
+                    backgroundColor: 'transparent',
+                    ease: "power2.out"
+                });
+            });
+        });
+        */
+
+        // Typing Animation
+        const typingWords = ['maximized.', 'optimized.', 'automated.', 'secured.', 'amplified.'];
+        let currentWordIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typingText');
+        
+        function typeWriter() {
+            const currentWord = typingWords[currentWordIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentWord.substring(0, currentCharIndex - 1);
+                currentCharIndex--;
+                
+                if (currentCharIndex === 0) {
+                    isDeleting = false;
+                    currentWordIndex = (currentWordIndex + 1) % typingWords.length;
+                    setTimeout(typeWriter, 500);
+                    return;
+                }
+            } else {
+                typingElement.textContent = currentWord.substring(0, currentCharIndex + 1);
+                currentCharIndex++;
+                
+                if (currentCharIndex === currentWord.length) {
+                    isDeleting = true;
+                    setTimeout(typeWriter, 2000);
+                    return;
+                }
+            }
+            
+            setTimeout(typeWriter, isDeleting ? 50 : 100);
+        }
+
+        // Floating Elements Animation
+        function animateFloatingElements() {
+            document.querySelectorAll('.floating-element').forEach((element, index) => {
+                gsap.to(element, {
+                    duration: 3 + Math.random() * 2,
+                    y: "random(-50, 50)",
+                    x: "random(-30, 30)",
+                    rotation: "random(-180, 180)",
+                    ease: "sine.inOut",
+                    repeat: -1,
+                    yoyo: true,
+                    delay: index * 0.2
+                });
+                
+                gsap.to(element, {
+                    duration: 2 + Math.random(),
+                    scale: 1.2,
+                    ease: "sine.inOut",
+                    repeat: -1,
+                    yoyo: true,
+                    delay: index * 0.3
+                });
+            });
+        }
+
+        // Magnetic Effect kaldırıldı
+
+        function startMainAnimations() {
+            // Start typing animation
+            setTimeout(typeWriter, 2000);
+            
+            // Animate floating elements
+            animateFloatingElements();
+            
+            // Add magnetic effect to cards - kaldırıldı
+            
+            // Roadmap yıldızları için basit hover efekti
+            document.querySelectorAll('.quarter-star').forEach(star => {
+                star.addEventListener('mouseenter', () => {
+                    gsap.to(star, {
+                        duration: 0.3,
+                        scale: 1.1,
+                        ease: "power2.out"
+                    });
+                });
+                
+                star.addEventListener('mouseleave', () => {
+                    gsap.to(star, {
+                        duration: 0.3,
+                        scale: 1,
+                        ease: "power2.out"
+                    });
+                });
+            });
+
+        // Hero Section Animasyonları
+        const heroTl = gsap.timeline();
+        
+        // Hero elementlerini başlangıçta gizle
+        gsap.set([".hero-badge", ".hero-subtitle", ".hero-title", ".hero-description", ".hero-buttons"], {
+            opacity: 0,
+            y: 50
+        });
+
+        // Hero animasyon sırası
+        heroTl
+            .to(".hero-badge", {
+                duration: 0.8,
+                opacity: 1,
+                y: 0,
+                ease: "power2.out"
+            })
+            .to(".hero-subtitle", {
+                duration: 0.6,
+                opacity: 1,
+                y: 0,
+                ease: "power2.out"
+            }, "-=0.4")
+            .to(".hero-title", {
+                duration: 1,
+                opacity: 1,
+                y: 0,
+                ease: "power2.out",
+                stagger: 0.2
+            }, "-=0.3")
+            .to(".hero-description", {
+                duration: 0.8,
+                opacity: 1,
+                y: 0,
+                ease: "power2.out"
+            }, "-=0.5")
+            .to(".hero-buttons", {
+                duration: 0.8,
+                opacity: 1,
+                y: 0,
+                ease: "back.out(1.7)"
+            }, "-=0.4");
+
+        // Video container animasyonu
+        gsap.fromTo(".video-container", {
+            opacity: 0,
+            scale: 0.8,
+            y: 100
+        }, {
+            duration: 1.2,
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            ease: "power2.out",
+            delay: 1.5
+        });
+
+        // Navbar scroll davranışı - Yeniden yazıldı
+        let lastScrollY = 0;
+        let isNavbarVisible = true;
+        
+        function handleNavbarScroll() {
+            const currentScrollY = window.scrollY;
+            const navbar = document.getElementById('navbar');
+            
+            if (!navbar) return;
+            
+            // Scroll yönünü belirle
+            const scrollingDown = currentScrollY > lastScrollY;
+            const scrollingUp = currentScrollY < lastScrollY;
+            
+            if (currentScrollY <= 300) {
+                // Hero section'da - her zaman göster
+                if (!isNavbarVisible) {
+                    gsap.to(navbar, {
+                        duration: 0.4,
+                        y: 0,
+                        opacity: 1,
+                        ease: "power2.out",
+                        pointerEvents: "auto"
+                    });
+                    isNavbarVisible = true;
+                }
+            } else {
+                // About section ve sonrasında
+                if (scrollingDown && isNavbarVisible) {
+                    // Aşağı scroll - gizle
+                    gsap.to(navbar, {
+                        duration: 0.4,
+                        y: -100,
+                        opacity: 0,
+                        ease: "power2.out",
+                        pointerEvents: "none"
+                    });
+                    isNavbarVisible = false;
+                } else if (scrollingUp && !isNavbarVisible && currentScrollY > 300) {
+                    // Yukarı scroll - göster
+                    gsap.to(navbar, {
+                        duration: 0.4,
+                        y: 0,
+                        opacity: 1,
+                        ease: "power2.out",
+                        pointerEvents: "auto"
+                    });
+                    isNavbarVisible = true;
+                }
+            }
+            
+            lastScrollY = currentScrollY;
+        }
+        
+        // Throttled scroll listener
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+            }
+            scrollTimeout = setTimeout(handleNavbarScroll, 10);
+        });
+        
+        // Başlangıçta navbar'ı ayarla
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            if (navbar) {
+                gsap.set(navbar, {
+                    y: 0,
+                    opacity: 1
+                });
+                isNavbarVisible = true;
+            }
+        });
+
+        // About Section Animasyonları
+        gsap.fromTo(".about-content", {
+            opacity: 0,
+            y: 80
+        }, {
+            duration: 1,
+            opacity: 1,
+            y: 0,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".about-content",
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        // About steps animasyonu
+        gsap.fromTo(".about-step", {
+            opacity: 0,
+            x: -50,
+            scale: 0.9
+        }, {
+            duration: 0.8,
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            ease: "power2.out",
+            stagger: 0.2,
+            scrollTrigger: {
+                trigger: ".about-steps",
+                start: "top 70%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        // Tokenomics kartları animasyonu
+        gsap.fromTo(".tokenomics-card", {
+            opacity: 0,
+            y: 60,
+            rotationX: 15
+        }, {
+            duration: 0.8,
+            opacity: 1,
+            y: 0,
+            rotationX: 0,
+            ease: "power2.out",
+            stagger: 0.15,
+            scrollTrigger: {
+                trigger: ".tokenomics-section",
+                start: "top 70%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        // Tokenomics chart animasyonu
+        gsap.fromTo(".tokenomics-chart", {
+            opacity: 0,
+            scale: 0.8,
+            rotation: -10
+        }, {
+            duration: 1.2,
+            opacity: 1,
+            scale: 1,
+            rotation: 0,
+            ease: "back.out(1.7)",
+            scrollTrigger: {
+                trigger: ".tokenomics-chart",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        // Roadmap animasyonları
+        gsap.fromTo(".stage-card", {
+            opacity: 0,
+            y: 100,
+            scale: 0.8
+        }, {
+            duration: 1,
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            ease: "power2.out",
+            stagger: 0.2,
+            scrollTrigger: {
+                trigger: ".roadmap-cards",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        // FAQ animasyonları - Sadece basit giriş animasyonu
+        gsap.fromTo(".faq-item", {
+            opacity: 0,
+            y: 20
+        }, {
+            duration: 0.4,
+            opacity: 1,
+            y: 0,
+            ease: "power2.out",
+            stagger: 0.1,
+            scrollTrigger: {
+                trigger: ".faq-section",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        // CTA Section animasyonu
+        gsap.fromTo(".cta-content", {
+            opacity: 0,
+            scale: 0.9,
+            y: 50
+        }, {
+            duration: 1,
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".cta-section",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        // Parallax efekti için background
+        gsap.to(".hero-background", {
+            yPercent: -50,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".hero-section",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+
+        // Tokenomics kartları hover efekti kaldırıldı
+
+        // Stage kartları hover efekti kaldırıldı
+
+        // Button hover animasyonları kaldırıldı
+
+        } // startMainAnimations fonksiyonunun sonu
+
+        // Normal cursor kullan
+        document.body.style.cursor = 'default';
+        
+        // Sayfa yüklendiğinde animasyonları başlat
+        window.addEventListener('load', () => {
+            startMainAnimations();
+        });
+
+        // Smooth scroll için
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Scroll progress indicator
+        gsap.to(".progress-bar", {
+            scaleX: 1,
+            transformOrigin: "left center",
+            ease: "none",
+            scrollTrigger: {
+                trigger: "body",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: true
+            }
         });
     </script>
     

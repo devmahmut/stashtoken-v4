@@ -631,6 +631,9 @@ body {
 .mb-8 {
   margin-bottom: 2rem;
 }
+.mb-16 {
+  margin-bottom: 4rem;
+}
 .mb-\[64px\] {
   margin-bottom: 64px;
 }
@@ -2148,6 +2151,10 @@ body {
   padding-top: 2px;
   padding-bottom: 2px;
 }
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
 .\!pr-1 {
   padding-right: 0.25rem !important;
 }
@@ -2219,6 +2226,9 @@ body {
 }
 .pt-\[56px\] {
   padding-top: 56px;
+}
+.pt-\[124px\] {
+  padding-top: 124px;
 }
 .pt-\[calc\(108px_\+_54px\)\] {
   padding-top: calc(108px + 54px);
@@ -3887,6 +3897,10 @@ button:hover .ryzome-logo-path {
     padding-top: 56px;
     padding-bottom: 56px;
   }
+  .md\:py-24 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
   .md\:pb-6 {
     padding-bottom: 1.5rem;
   }
@@ -4172,33 +4186,45 @@ html.dark
 }
 
 .quarter-btn:hover {
-  transform: scale(1.05);
+  transform: translate(-50%, -50%) scale(1.1);
   filter: drop-shadow(0 0 8px rgba(255, 174, 30, 0.6));
+  background: rgba(255, 174, 30, 0.2);
+  border-color: rgba(255, 174, 30, 0.6);
 }
 
 /* Roadmap container positioning */
 .quarter-btn {
   z-index: 10;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 174, 30, 0.1);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 174, 30, 0.3);
 }
 
 .quarter-btn-1 {
-    left: 35.0%; /* 346 / 988.5 * 100 = 35.0% - clip-path merkezi */
-    top: 65.3%; /* 277 / 424.5 * 100 = 65.3% - clip-path merkezi */
+    left: 35.8%; /* 353.593163 / 988.5 = 35.8% */
+    top: 65.5%; /* 278.089569 / 424.5 = 65.5% */
+    transform: translate(-50%, -50%);
 }
 
 .quarter-btn-2 {
-    left: 62.0%; /* 612 / 988.5 * 100 = 62.0% - clip-path merkezi */
-    top: 76.4%; /* 324 / 424.5 * 100 = 76.4% - clip-path merkezi */
+    left: 61.8%;
+    top: 76.3%;
+    transform: translate(-50%, -50%);
 }
 
 .quarter-btn-3 {
-    left: 88.4%; /* 873 / 988.5 * 100 = 88.4% - clip-path merkezi */
-    top: 45.7%; /* 194 / 424.5 * 100 = 45.7% - clip-path merkezi */
+    left: 88.3%; /* 873.210455 / 988.5 = 88.3% */
+    top: 45.7%; /* 193.990176 / 424.5 = 45.7% */
+    transform: translate(-50%, -50%);
 }
 
 .quarter-btn-4 {
-    left: 68.0%; /* 672 / 988.5 * 100 = 68.0% - clip-path merkezi */
-    top: 21.0%; /* 89 / 424.5 * 100 = 21.0% - clip-path merkezi */
+    left: 68.0%; /* 671.868286 / 988.5 = 68.0% */
+    top: 21.0%; /* 88.976002 / 424.5 = 21.0% */
+    transform: translate(-50%, -50%);
 }
 
 /* Tailwind utility classes */
@@ -4241,13 +4267,25 @@ html.dark
 }
 
 /* Q button'ları için active state */
+.quarter-btn.active {
+  transform: translate(-50%, -50%) scale(1.2);
+  background: rgba(255, 174, 30, 0.3);
+  border-color: rgba(255, 174, 30, 0.8);
+  filter: drop-shadow(0 0 12px rgba(255, 174, 30, 0.8));
+}
+
 .quarter-btn.active svg {
   opacity: 1 !important;
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 8px rgba(255, 174, 30, 0.8));
 }
 
 /* Quarter button cursor */
 .quarter-btn {
   cursor: pointer;
+}
+
+/* Navbar Hide/Show */
+.hidden-navbar {
+  transform: translateY(-100%) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
